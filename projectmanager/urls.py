@@ -1,8 +1,10 @@
 from django.urls import path
 from django.views.generic import TemplateView
+from .views import dashboard, user_list
 
-app_name = 'projectmanager'
+app_name = "projectmanager"
 
 urlpatterns = [
-    path('', TemplateView.as_view(template_name="projectmanager/index.html"))
+    path("", dashboard, name="dashboard"),
+    path("userlist/", user_list, name="userlist"),
 ]

@@ -1,0 +1,52 @@
+POST http://127.0.0.1:8000/api/signup/
+Content-Type: application/json
+
+{
+    "username": "test",
+    "password": "test",
+    "email": "test@test.com",
+    "name": "Test User",
+    "roles": "User"
+}
+
+###
+POST http://127.0.0.1:8000/api/auth/login/
+Content-Type: application/json
+
+{"username": "test", 
+ "password": "test"
+}
+
+###
+
+
+POST http://127.0.0.1:8000/api/clients/
+{
+    "name": ""
+}
+
+
+###
+POST http://127.0.0.1:8000/api/projects/
+Content-Type: application/json
+
+{
+    "name": "",
+    "start_date": null,
+    "due_date": null,
+    "client": null,
+    "prerequisites": [], 
+    "assignee": []
+}
+
+###
+
+POST http://127.0.0.1:8000/api/tasks/
+{
+    "description": "",
+    "start_date": null,
+    "due_date": null,
+    "project": null,
+    "assignee": null,
+    "prerequisites": []
+}
