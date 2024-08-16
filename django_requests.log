@@ -411,3 +411,195 @@ INFO 2024-08-16 17:31:38,529 logger Request: method=GET, path=/api/auth/refresh,
 WARNING 2024-08-16 17:31:38,732 log Unauthorized: /api/auth/refresh
 INFO 2024-08-16 17:32:11,643 logger Request: method=GET, path=/api/auth/login, headers={'Host': '178.251.45.13', 'X-Real-Ip': '31.223.83.179', 'X-Forwarded-For': '31.223.83.179', 'X-Forwarded-Proto': 'http', 'Connection': 'close', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,image/svg+xml,*/*;q=0.8', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate', 'Cookie': 'csrftoken=p9atrbGHZJJzrEuxA73bgvko2zKeJpKR; tabstyle=html-tab', 'Upgrade-Insecure-Requests': '1', 'Priority': 'u=0, i'},cookies={'csrftoken': 'p9atrbGHZJJzrEuxA73bgvko2zKeJpKR', 'tabstyle': 'html-tab'}, query_params=<QueryDict: {}>,post_data=<QueryDict: {}>
 WARNING 2024-08-16 17:32:11,785 log Method Not Allowed: /api/auth/login
+INFO 2024-08-16 20:55:36,256 autoreload Watching for file changes with StatReloader
+INFO 2024-08-16 21:00:04,343 autoreload Watching for file changes with StatReloader
+INFO 2024-08-16 21:03:06,037 autoreload Watching for file changes with StatReloader
+INFO 2024-08-16 21:03:13,527 logger Request: method=GET, path=/api/projects/, headers={'Content-Length': '', 'Content-Type': 'text/plain', 'Host': '127.0.0.1:8000', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,image/svg+xml,*/*;q=0.8', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Connection': 'keep-alive', 'Cookie': 'csrftoken=0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF; tabstyle=raw-tab', 'Upgrade-Insecure-Requests': '1', 'Sec-Fetch-Dest': 'document', 'Sec-Fetch-Mode': 'navigate', 'Sec-Fetch-Site': 'none', 'Sec-Fetch-User': '?1', 'Priority': 'u=0, i'},cookies={'csrftoken': '0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF', 'tabstyle': 'raw-tab'}, query_params=<QueryDict: {}>,post_data=<QueryDict: {}>
+WARNING 2024-08-16 21:03:13,558 log Not Found: /api/projects/
+INFO 2024-08-16 21:03:13,670 logger Request: method=GET, path=/favicon.ico, headers={'Content-Length': '', 'Content-Type': 'text/plain', 'Host': '127.0.0.1:8000', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0', 'Accept': 'image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Referer': 'http://127.0.0.1:8000/api/projects/', 'Connection': 'keep-alive', 'Cookie': 'csrftoken=0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF; tabstyle=raw-tab', 'Sec-Fetch-Dest': 'image', 'Sec-Fetch-Mode': 'no-cors', 'Sec-Fetch-Site': 'same-origin', 'Priority': 'u=6'},cookies={'csrftoken': '0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF', 'tabstyle': 'raw-tab'}, query_params=<QueryDict: {}>,post_data=<QueryDict: {}>
+WARNING 2024-08-16 21:03:13,686 log Not Found: /favicon.ico
+INFO 2024-08-16 21:03:22,794 logger Request: method=GET, path=/api/projects, headers={'Content-Length': '', 'Content-Type': 'text/plain', 'Host': '127.0.0.1:8000', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,image/svg+xml,*/*;q=0.8', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Connection': 'keep-alive', 'Cookie': 'csrftoken=0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF; tabstyle=raw-tab', 'Upgrade-Insecure-Requests': '1', 'Sec-Fetch-Dest': 'document', 'Sec-Fetch-Mode': 'navigate', 'Sec-Fetch-Site': 'none', 'Sec-Fetch-User': '?1', 'Priority': 'u=0, i'},cookies={'csrftoken': '0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF', 'tabstyle': 'raw-tab'}, query_params=<QueryDict: {}>,post_data=<QueryDict: {}>
+WARNING 2024-08-16 21:03:22,840 log Unauthorized: /api/projects
+INFO 2024-08-16 21:03:23,391 logger Request: method=GET, path=/favicon.ico, headers={'Content-Length': '', 'Content-Type': 'text/plain', 'Host': '127.0.0.1:8000', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0', 'Accept': 'image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Referer': 'http://127.0.0.1:8000/api/projects', 'Connection': 'keep-alive', 'Cookie': 'csrftoken=0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF; tabstyle=raw-tab', 'Sec-Fetch-Dest': 'image', 'Sec-Fetch-Mode': 'no-cors', 'Sec-Fetch-Site': 'same-origin', 'Priority': 'u=6'},cookies={'csrftoken': '0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF', 'tabstyle': 'raw-tab'}, query_params=<QueryDict: {}>,post_data=<QueryDict: {}>
+WARNING 2024-08-16 21:03:23,408 log Not Found: /favicon.ico
+INFO 2024-08-16 21:03:28,140 logger Request: method=GET, path=/api/auth/login, headers={'Content-Length': '', 'Content-Type': 'text/plain', 'Host': '127.0.0.1:8000', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,image/svg+xml,*/*;q=0.8', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Connection': 'keep-alive', 'Cookie': 'csrftoken=0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF; tabstyle=raw-tab', 'Upgrade-Insecure-Requests': '1', 'Sec-Fetch-Dest': 'document', 'Sec-Fetch-Mode': 'navigate', 'Sec-Fetch-Site': 'none', 'Sec-Fetch-User': '?1', 'Priority': 'u=0, i'},cookies={'csrftoken': '0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF', 'tabstyle': 'raw-tab'}, query_params=<QueryDict: {}>,post_data=<QueryDict: {}>
+WARNING 2024-08-16 21:03:28,186 log Method Not Allowed: /api/auth/login
+INFO 2024-08-16 21:03:35,845 logger Request: method=POST, path=/api/auth/login, headers={'Content-Length': '56', 'Content-Type': 'application/json', 'Host': '127.0.0.1:8000', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0', 'Accept': 'text/html; q=1.0, */*', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Referer': 'http://127.0.0.1:8000/api/auth/login', 'X-Csrftoken': 'xHJgeVCtrJay5LFiJEKwYZY8t3B8nWSRnaeLwlizDWh4mMndfaZ22emng4Lufgym', 'X-Requested-With': 'XMLHttpRequest', 'Origin': 'http://127.0.0.1:8000', 'Connection': 'keep-alive', 'Cookie': 'csrftoken=0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF; tabstyle=raw-tab', 'Sec-Fetch-Dest': 'empty', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Site': 'same-origin', 'Priority': 'u=0'},cookies={'csrftoken': '0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF', 'tabstyle': 'raw-tab'}, query_params=<QueryDict: {}>,post_data=<QueryDict: {}>
+WARNING 2024-08-16 21:03:36,618 log Unauthorized: /api/auth/login
+INFO 2024-08-16 21:03:59,595 autoreload C:\Users\ASUS\Desktop\ITracker\sync\core\settings.py changed, reloading.
+INFO 2024-08-16 21:04:00,555 autoreload Watching for file changes with StatReloader
+INFO 2024-08-16 21:04:03,597 logger Request: method=GET, path=/api/projects, headers={'Content-Length': '', 'Content-Type': 'text/plain', 'Host': '127.0.0.1:8000', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,image/svg+xml,*/*;q=0.8', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Connection': 'keep-alive', 'Cookie': 'csrftoken=0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF; tabstyle=raw-tab', 'Upgrade-Insecure-Requests': '1', 'Sec-Fetch-Dest': 'document', 'Sec-Fetch-Mode': 'navigate', 'Sec-Fetch-Site': 'none', 'Sec-Fetch-User': '?1', 'Priority': 'u=0, i'},cookies={'csrftoken': '0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF', 'tabstyle': 'raw-tab'}, query_params=<QueryDict: {}>,post_data=<QueryDict: {}>
+INFO 2024-08-16 21:04:12,469 logger Request: method=POST, path=/api/projects, headers={'Content-Length': '708', 'Content-Type': 'multipart/form-data; boundary=---------------------------6549911518664737362549307498', 'Host': '127.0.0.1:8000', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,image/svg+xml,*/*;q=0.8', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Referer': 'http://127.0.0.1:8000/api/projects', 'Origin': 'http://127.0.0.1:8000', 'Connection': 'keep-alive', 'Cookie': 'csrftoken=0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF; tabstyle=html-tab', 'Upgrade-Insecure-Requests': '1', 'Sec-Fetch-Dest': 'document', 'Sec-Fetch-Mode': 'navigate', 'Sec-Fetch-Site': 'same-origin', 'Sec-Fetch-User': '?1', 'Priority': 'u=0, i'},cookies={'csrftoken': '0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF', 'tabstyle': 'html-tab'}, query_params=<QueryDict: {}>,post_data=<QueryDict: {'csrfmiddlewaretoken': ['M6yMDqDmd6zJIAQcyAEj9NMcnrQUwOaRCz3hVQjspjGfZBy746TPd2aras0go8Qm'], 'name': ['123'], 'description': ['asd'], 'due_date': ['2024-08-16'], 'owner': ['']}>
+ERROR 2024-08-16 21:04:12,563 log Internal Server Error: /api/projects
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\db\utils.py", line 98, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: FOREIGN KEY constraint failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\rest_framework\generics.py", line 246, in post
+    return self.create(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\rest_framework\mixins.py", line 24, in perform_create
+    serializer.save()
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\rest_framework\serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\db\models\base.py", line 822, in save
+    self.save_base(
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\db\models\base.py", line 909, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\db\models\base.py", line 1071, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\db\models\base.py", line 1112, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\db\models\query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1835, in execute_sql
+    self.connection.ops.fetch_returned_insert_columns(
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\db\backends\base\operations.py", line 216, in fetch_returned_insert_columns
+    return cursor.fetchone()
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\db\utils.py", line 97, in inner
+    with self:
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\db\utils.py", line 98, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: FOREIGN KEY constraint failed
+INFO 2024-08-16 21:05:50,377 logger Request: method=GET, path=/api/signup, headers={'Content-Length': '', 'Content-Type': 'text/plain', 'Host': '127.0.0.1:8000', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,image/svg+xml,*/*;q=0.8', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Connection': 'keep-alive', 'Cookie': 'csrftoken=0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF; tabstyle=html-tab', 'Upgrade-Insecure-Requests': '1', 'Sec-Fetch-Dest': 'document', 'Sec-Fetch-Mode': 'navigate', 'Sec-Fetch-Site': 'none', 'Sec-Fetch-User': '?1', 'Priority': 'u=0, i'},cookies={'csrftoken': '0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF', 'tabstyle': 'html-tab'}, query_params=<QueryDict: {}>,post_data=<QueryDict: {}>
+WARNING 2024-08-16 21:05:50,386 log Method Not Allowed: /api/signup
+INFO 2024-08-16 21:06:00,480 logger Request: method=POST, path=/api/signup/, headers={'Content-Length': '132', 'Content-Type': 'application/json', 'User-Agent': 'vscode-restclient', 'Accept-Encoding': 'gzip, deflate', 'Host': '127.0.0.1:8000', 'Connection': 'close'},cookies={}, query_params=<QueryDict: {}>,post_data=<QueryDict: {}>
+INFO 2024-08-16 21:06:10,082 logger Request: method=GET, path=/api/auth/login, headers={'Content-Length': '', 'Content-Type': 'text/plain', 'Host': '127.0.0.1:8000', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,image/svg+xml,*/*;q=0.8', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Connection': 'keep-alive', 'Cookie': 'csrftoken=0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF; tabstyle=html-tab', 'Upgrade-Insecure-Requests': '1', 'Sec-Fetch-Dest': 'document', 'Sec-Fetch-Mode': 'navigate', 'Sec-Fetch-Site': 'none', 'Sec-Fetch-User': '?1', 'Priority': 'u=0, i'},cookies={'csrftoken': '0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF', 'tabstyle': 'html-tab'}, query_params=<QueryDict: {}>,post_data=<QueryDict: {}>
+WARNING 2024-08-16 21:06:10,100 log Method Not Allowed: /api/auth/login
+INFO 2024-08-16 21:06:11,940 logger Request: method=POST, path=/api/auth/login, headers={'Content-Length': '490', 'Content-Type': 'multipart/form-data; boundary=---------------------------50198814241567483321381696379', 'Host': '127.0.0.1:8000', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,image/svg+xml,*/*;q=0.8', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Referer': 'http://127.0.0.1:8000/api/auth/login', 'Origin': 'http://127.0.0.1:8000', 'Connection': 'keep-alive', 'Cookie': 'csrftoken=0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF; tabstyle=html-tab', 'Upgrade-Insecure-Requests': '1', 'Sec-Fetch-Dest': 'document', 'Sec-Fetch-Mode': 'navigate', 'Sec-Fetch-Site': 'same-origin', 'Sec-Fetch-User': '?1', 'Priority': 'u=0, i'},cookies={'csrftoken': '0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF', 'tabstyle': 'html-tab'}, query_params=<QueryDict: {}>,post_data=<QueryDict: {'csrfmiddlewaretoken': ['jZpXRSU89E1WG7l7nSRzGtwNic3YvlU59sUs9iAelR8sX832To65KIU25ddknFAA'], 'email': ['test@test.com'], 'password': ['test']}>
+INFO 2024-08-16 21:06:22,433 logger Request: method=GET, path=/api/clients, headers={'Content-Length': '', 'Content-Type': 'text/plain', 'Host': '127.0.0.1:8000', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,image/svg+xml,*/*;q=0.8', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Connection': 'keep-alive', 'Cookie': 'csrftoken=0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF; tabstyle=html-tab; refresh_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcyNDQzNjM3MiwiaWF0IjoxNzIzODMxNTcyLCJqdGkiOiJmZTQ0YTZkNjRiNzY0MTJmODg5ZmI0MDA4ODI2ZmQ3YiIsInVzZXJfaWQiOjF9.7m2EBiMAebfLlSBDrnmHfTleXsgnxaAw6gj0u8-pqRk', 'Upgrade-Insecure-Requests': '1', 'Sec-Fetch-Dest': 'document', 'Sec-Fetch-Mode': 'navigate', 'Sec-Fetch-Site': 'none', 'Sec-Fetch-User': '?1', 'Priority': 'u=0, i'},cookies={'csrftoken': '0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF', 'tabstyle': 'html-tab', 'refresh_token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcyNDQzNjM3MiwiaWF0IjoxNzIzODMxNTcyLCJqdGkiOiJmZTQ0YTZkNjRiNzY0MTJmODg5ZmI0MDA4ODI2ZmQ3YiIsInVzZXJfaWQiOjF9.7m2EBiMAebfLlSBDrnmHfTleXsgnxaAw6gj0u8-pqRk'}, query_params=<QueryDict: {}>,post_data=<QueryDict: {}>
+INFO 2024-08-16 21:06:22,472 logger Request: method=GET, path=/api/clients/, headers={'Content-Length': '', 'Content-Type': 'text/plain', 'Host': '127.0.0.1:8000', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,image/svg+xml,*/*;q=0.8', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Connection': 'keep-alive', 'Cookie': 'csrftoken=0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF; tabstyle=html-tab; refresh_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcyNDQzNjM3MiwiaWF0IjoxNzIzODMxNTcyLCJqdGkiOiJmZTQ0YTZkNjRiNzY0MTJmODg5ZmI0MDA4ODI2ZmQ3YiIsInVzZXJfaWQiOjF9.7m2EBiMAebfLlSBDrnmHfTleXsgnxaAw6gj0u8-pqRk', 'Upgrade-Insecure-Requests': '1', 'Sec-Fetch-Dest': 'document', 'Sec-Fetch-Mode': 'navigate', 'Sec-Fetch-Site': 'none', 'Sec-Fetch-User': '?1', 'Priority': 'u=0, i'},cookies={'csrftoken': '0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF', 'tabstyle': 'html-tab', 'refresh_token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcyNDQzNjM3MiwiaWF0IjoxNzIzODMxNTcyLCJqdGkiOiJmZTQ0YTZkNjRiNzY0MTJmODg5ZmI0MDA4ODI2ZmQ3YiIsInVzZXJfaWQiOjF9.7m2EBiMAebfLlSBDrnmHfTleXsgnxaAw6gj0u8-pqRk'}, query_params=<QueryDict: {}>,post_data=<QueryDict: {}>
+INFO 2024-08-16 21:06:26,451 logger Request: method=POST, path=/api/clients/, headers={'Content-Length': '370', 'Content-Type': 'multipart/form-data; boundary=---------------------------216362789719026097122853705278', 'Host': '127.0.0.1:8000', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,image/svg+xml,*/*;q=0.8', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Referer': 'http://127.0.0.1:8000/api/clients/', 'Origin': 'http://127.0.0.1:8000', 'Connection': 'keep-alive', 'Cookie': 'csrftoken=0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF; tabstyle=html-tab; refresh_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcyNDQzNjM3MiwiaWF0IjoxNzIzODMxNTcyLCJqdGkiOiJmZTQ0YTZkNjRiNzY0MTJmODg5ZmI0MDA4ODI2ZmQ3YiIsInVzZXJfaWQiOjF9.7m2EBiMAebfLlSBDrnmHfTleXsgnxaAw6gj0u8-pqRk', 'Upgrade-Insecure-Requests': '1', 'Sec-Fetch-Dest': 'document', 'Sec-Fetch-Mode': 'navigate', 'Sec-Fetch-Site': 'same-origin', 'Sec-Fetch-User': '?1', 'Priority': 'u=0, i'},cookies={'csrftoken': '0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF', 'tabstyle': 'html-tab', 'refresh_token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcyNDQzNjM3MiwiaWF0IjoxNzIzODMxNTcyLCJqdGkiOiJmZTQ0YTZkNjRiNzY0MTJmODg5ZmI0MDA4ODI2ZmQ3YiIsInVzZXJfaWQiOjF9.7m2EBiMAebfLlSBDrnmHfTleXsgnxaAw6gj0u8-pqRk'}, query_params=<QueryDict: {}>,post_data=<QueryDict: {'csrfmiddlewaretoken': ['zdjR6aNe2AlGSMd70ER1xXBGCbCzAkWApGOmoAtkeNsc9NV2wa6xBcZVpcMVsEC5'], 'name': ['Client 1']}>
+INFO 2024-08-16 21:06:31,967 logger Request: method=GET, path=/api/projects, headers={'Content-Length': '', 'Content-Type': 'text/plain', 'Host': '127.0.0.1:8000', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,image/svg+xml,*/*;q=0.8', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Connection': 'keep-alive', 'Cookie': 'csrftoken=0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF; tabstyle=html-tab; refresh_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcyNDQzNjM3MiwiaWF0IjoxNzIzODMxNTcyLCJqdGkiOiJmZTQ0YTZkNjRiNzY0MTJmODg5ZmI0MDA4ODI2ZmQ3YiIsInVzZXJfaWQiOjF9.7m2EBiMAebfLlSBDrnmHfTleXsgnxaAw6gj0u8-pqRk', 'Upgrade-Insecure-Requests': '1', 'Sec-Fetch-Dest': 'document', 'Sec-Fetch-Mode': 'navigate', 'Sec-Fetch-Site': 'none', 'Sec-Fetch-User': '?1', 'Priority': 'u=0, i'},cookies={'csrftoken': '0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF', 'tabstyle': 'html-tab', 'refresh_token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcyNDQzNjM3MiwiaWF0IjoxNzIzODMxNTcyLCJqdGkiOiJmZTQ0YTZkNjRiNzY0MTJmODg5ZmI0MDA4ODI2ZmQ3YiIsInVzZXJfaWQiOjF9.7m2EBiMAebfLlSBDrnmHfTleXsgnxaAw6gj0u8-pqRk'}, query_params=<QueryDict: {}>,post_data=<QueryDict: {}>
+INFO 2024-08-16 21:06:40,817 logger Request: method=POST, path=/api/projects, headers={'Content-Length': '716', 'Content-Type': 'multipart/form-data; boundary=---------------------------62199416436714885013412124654', 'Host': '127.0.0.1:8000', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,image/svg+xml,*/*;q=0.8', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Referer': 'http://127.0.0.1:8000/api/projects', 'Origin': 'http://127.0.0.1:8000', 'Connection': 'keep-alive', 'Cookie': 'csrftoken=0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF; tabstyle=html-tab; refresh_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcyNDQzNjM3MiwiaWF0IjoxNzIzODMxNTcyLCJqdGkiOiJmZTQ0YTZkNjRiNzY0MTJmODg5ZmI0MDA4ODI2ZmQ3YiIsInVzZXJfaWQiOjF9.7m2EBiMAebfLlSBDrnmHfTleXsgnxaAw6gj0u8-pqRk', 'Upgrade-Insecure-Requests': '1', 'Sec-Fetch-Dest': 'document', 'Sec-Fetch-Mode': 'navigate', 'Sec-Fetch-Site': 'same-origin', 'Sec-Fetch-User': '?1', 'Priority': 'u=0, i'},cookies={'csrftoken': '0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF', 'tabstyle': 'html-tab', 'refresh_token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcyNDQzNjM3MiwiaWF0IjoxNzIzODMxNTcyLCJqdGkiOiJmZTQ0YTZkNjRiNzY0MTJmODg5ZmI0MDA4ODI2ZmQ3YiIsInVzZXJfaWQiOjF9.7m2EBiMAebfLlSBDrnmHfTleXsgnxaAw6gj0u8-pqRk'}, query_params=<QueryDict: {}>,post_data=<QueryDict: {'csrfmiddlewaretoken': ['Y0pU9tXegrxLR2lDXxFeBVih9AURN6LrOtUprTDksEEh833yt3UKFaGwWB4dFqrW'], 'name': ['3123'], 'description': ['123'], 'due_date': ['2024-08-16'], 'owner': ['1']}>
+ERROR 2024-08-16 21:06:40,958 log Internal Server Error: /api/projects
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\db\utils.py", line 98, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: FOREIGN KEY constraint failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\rest_framework\generics.py", line 246, in post
+    return self.create(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\rest_framework\mixins.py", line 24, in perform_create
+    serializer.save()
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\rest_framework\serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\db\models\base.py", line 822, in save
+    self.save_base(
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\db\models\base.py", line 909, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\db\models\base.py", line 1071, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\db\models\base.py", line 1112, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\db\models\query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1835, in execute_sql
+    self.connection.ops.fetch_returned_insert_columns(
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\db\backends\base\operations.py", line 216, in fetch_returned_insert_columns
+    return cursor.fetchone()
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\db\utils.py", line 97, in inner
+    with self:
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\db\utils.py", line 98, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: FOREIGN KEY constraint failed
+INFO 2024-08-16 21:06:46,309 logger Request: method=GET, path=/api/projects, headers={'Content-Length': '', 'Content-Type': 'text/plain', 'Host': '127.0.0.1:8000', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,image/svg+xml,*/*;q=0.8', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Connection': 'keep-alive', 'Cookie': 'csrftoken=0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF; tabstyle=html-tab; refresh_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcyNDQzNjM3MiwiaWF0IjoxNzIzODMxNTcyLCJqdGkiOiJmZTQ0YTZkNjRiNzY0MTJmODg5ZmI0MDA4ODI2ZmQ3YiIsInVzZXJfaWQiOjF9.7m2EBiMAebfLlSBDrnmHfTleXsgnxaAw6gj0u8-pqRk', 'Upgrade-Insecure-Requests': '1', 'Sec-Fetch-Dest': 'document', 'Sec-Fetch-Mode': 'navigate', 'Sec-Fetch-Site': 'none', 'Sec-Fetch-User': '?1', 'Priority': 'u=0, i'},cookies={'csrftoken': '0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF', 'tabstyle': 'html-tab', 'refresh_token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcyNDQzNjM3MiwiaWF0IjoxNzIzODMxNTcyLCJqdGkiOiJmZTQ0YTZkNjRiNzY0MTJmODg5ZmI0MDA4ODI2ZmQ3YiIsInVzZXJfaWQiOjF9.7m2EBiMAebfLlSBDrnmHfTleXsgnxaAw6gj0u8-pqRk'}, query_params=<QueryDict: {}>,post_data=<QueryDict: {}>
+INFO 2024-08-16 21:06:51,617 logger Request: method=GET, path=/api/subprojects, headers={'Content-Length': '', 'Content-Type': 'text/plain', 'Host': '127.0.0.1:8000', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,image/svg+xml,*/*;q=0.8', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Connection': 'keep-alive', 'Cookie': 'csrftoken=0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF; tabstyle=html-tab; refresh_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcyNDQzNjM3MiwiaWF0IjoxNzIzODMxNTcyLCJqdGkiOiJmZTQ0YTZkNjRiNzY0MTJmODg5ZmI0MDA4ODI2ZmQ3YiIsInVzZXJfaWQiOjF9.7m2EBiMAebfLlSBDrnmHfTleXsgnxaAw6gj0u8-pqRk', 'Upgrade-Insecure-Requests': '1', 'Sec-Fetch-Dest': 'document', 'Sec-Fetch-Mode': 'navigate', 'Sec-Fetch-Site': 'none', 'Sec-Fetch-User': '?1', 'Priority': 'u=0, i'},cookies={'csrftoken': '0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF', 'tabstyle': 'html-tab', 'refresh_token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcyNDQzNjM3MiwiaWF0IjoxNzIzODMxNTcyLCJqdGkiOiJmZTQ0YTZkNjRiNzY0MTJmODg5ZmI0MDA4ODI2ZmQ3YiIsInVzZXJfaWQiOjF9.7m2EBiMAebfLlSBDrnmHfTleXsgnxaAw6gj0u8-pqRk'}, query_params=<QueryDict: {}>,post_data=<QueryDict: {}>

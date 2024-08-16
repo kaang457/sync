@@ -6,9 +6,15 @@ from django.utils.text import slugify
 from django.utils.translation import gettext_lazy as _
 from django.conf import settings
 
+
 class Image(models.Model):
-   description = models.CharField(max_length=255)
-   image = models.ImageField(upload_to='images/')
+    description = models.CharField(max_length=255)
+    image = models.ImageField(upload_to="images/")
+
+    def __str__(self):
+        return self.description
+
+
 class User(AbstractUser):
     ROLE_CHOICES = [
         ("Admin", "admin"),
@@ -45,7 +51,7 @@ class Client(models.Model):
 class Project(models.Model):
     name = models.CharField(max_length=100)
     created_at = models.DateField(auto_now=True)
-    description = models.CharField(max_length = 255)
+    description = models.CharField(max_length=255)
     due_date = models.DateField(blank=True, null=True)
     owner = models.ForeignKey(
         User,
@@ -54,26 +60,37 @@ class Project(models.Model):
         null=True,
         related_name="created_project",
     )
-    sub_project = models.ForeignKey('SubProject', on_delete=models.CASCADE, default = 1)
+    sub_project = models.ForeignKey("SubProject", on_delete=models.CASCADE, default=1)
+
     def __str__(self):
         return self.name
+
 
 class SubProject(models.Model):
     name = models.CharField(max_length=255)
     description = models.CharField(max_length=255)
     users = models.ManyToManyField(User)
-    projectId = models.ForeignKey(Project, on_delete = models.CASCADE)
+    projectId = models.ForeignKey(Project, on_delete=models.CASCADE)
+
 
 class Comment(models.Model):
     content = models.TextField()
     created_at = models.DateTimeField(auto_now=True)
-    created_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name = "comments")
+    created_by = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="comments"
+    )
+
+
 class Update(models.Model):
-    field = models.CharField(max_length = 50)
-    old_value = models.CharField(max_length = 50)
-    new_value = models.CharField(max_length = 50)
+    field = models.CharField(max_length=50)
+    old_value = models.CharField(max_length=50)
+    new_value = models.CharField(max_length=50)
     created_at = models.DateTimeField(auto_now=True)
-    created_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name="updates")
+    created_by = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="updates"
+    )
+
+
 class Issue(models.Model):
     options = (
         ("open", "Open"),
@@ -88,7 +105,12 @@ class Issue(models.Model):
     label = models.CharField(max_length=10, choices=features, default="task")
     project = models.ForeignKey(Project, on_delete=models.PROTECT, default=1)
 
-    priority_options = (("low", "Low"), ("medium", "Medium"), ("high", "High"), ("critical", "Critical"))
+    priority_options = (
+        ("low", "Low"),
+        ("medium", "Medium"),
+        ("high", "High"),
+        ("critical", "Critical"),
+    )
     priority = models.CharField(
         max_length=10, choices=priority_options, default="medium"
     )
@@ -98,11 +120,15 @@ class Issue(models.Model):
     start_date = models.DateField(auto_now=True)
     due_date = models.DateField(blank=True, null=True)
     status = models.CharField(max_length=15, choices=options, default="open")
-    comment = models.ForeignKey(Comment, on_delete=models.CASCADE, blank=True, default = 1)
-    update = models.ForeignKey(Update, on_delete=models.CASCADE, blank=True, default = 1)
+    comment = models.ForeignKey(
+        Comment, on_delete=models.CASCADE, blank=True, default=1
+    )
+    update = models.ForeignKey(Update, on_delete=models.CASCADE, blank=True, default=1)
+
 
 class Ticket(models.Model):
     description = models.CharField(max_length=255)
+
 
 class Log(models.Model):
     class TaskLogObjects(models.Manager):
