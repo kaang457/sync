@@ -50,16 +50,14 @@ class Client(models.Model):
 
 class Project(models.Model):
     name = models.CharField(max_length=100)
-    created_at = models.DateField(auto_now=True)
+    createdAt = models.DateField(auto_now=True)
     description = models.CharField(max_length=255)
-    due_date = models.DateField(blank=True, null=True)
     owner = models.ForeignKey(
         User,
         on_delete=models.PROTECT,
-        blank=True,
-        null=True,
         related_name="created_project",
     )
+    users = models.ManyToManyField(User)
     sub_project = models.ForeignKey("SubProject", on_delete=models.CASCADE, default=1)
 
     def __str__(self):
@@ -83,11 +81,19 @@ class Comment(models.Model):
 
 class Update(models.Model):
     field = models.CharField(max_length=50)
-    old_value = models.CharField(max_length=50)
-    new_value = models.CharField(max_length=50)
-    created_at = models.DateTimeField(auto_now=True)
-    created_by = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="updates"
+    oldValue = models.CharField(max_length=50)
+    newValue = models.CharField(max_length=50)
+    createdAt = models.DateTimeField(auto_now=True)
+
+
+class Ticket(models.Model):
+    description = models.CharField(max_length=255)
+    TYPE_CHOICES = ("Question", "question")
+    PRIORITY_CHOICES = ("Low", "low"), ("Medium", "medium"), ("High", "high")
+    STATUS_CHOICES = (
+        ("Open", "open"),
+        ("In Progress", "in_progress"),
+        ("Resolved", "resolved"),
     )
 
 
@@ -97,12 +103,12 @@ class Issue(models.Model):
         ("in_progress", "In Progress"),
         ("resolved", "Resolved"),
     )
-    features = (
+    labels = (
         ("task", "Task"),
         ("bug", "Bug"),
         ("feature", "Feature"),
     )
-    label = models.CharField(max_length=10, choices=features, default="task")
+    label = models.CharField(max_length=10, choices=labels, default="task")
     project = models.ForeignKey(Project, on_delete=models.PROTECT, default=1)
 
     priority_options = (
@@ -114,16 +120,18 @@ class Issue(models.Model):
     priority = models.CharField(
         max_length=10, choices=priority_options, default="medium"
     )
+    project = models.ForeignKey(Project, on_delete=models.PROTECT, default=1)
     content = models.CharField(max_length=250)
     assignee = models.ForeignKey(User, on_delete=models.PROTECT, blank=True, default=1)
     description = models.CharField(max_length=250)
-    start_date = models.DateField(auto_now=True)
-    due_date = models.DateField(blank=True, null=True)
+    createdAt = models.DateField(auto_now=True)
+
     status = models.CharField(max_length=15, choices=options, default="open")
     comment = models.ForeignKey(
         Comment, on_delete=models.CASCADE, blank=True, default=1
     )
     update = models.ForeignKey(Update, on_delete=models.CASCADE, blank=True, default=1)
+    assignee = models.ForeignKey(User, on_delete=models.PROTECT, blank=True, default=1)
 
 
 class Ticket(models.Model):
