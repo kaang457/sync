@@ -134,10 +134,6 @@ class Issue(models.Model):
     assignee = models.ForeignKey(User, on_delete=models.PROTECT, blank=True, default=1)
 
 
-class Ticket(models.Model):
-    description = models.CharField(max_length=255)
-
-
 class Log(models.Model):
     class TaskLogObjects(models.Manager):
         def get_queryset(self):

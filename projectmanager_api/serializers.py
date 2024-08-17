@@ -1,15 +1,30 @@
 from rest_framework import serializers, status
-from projectmanager.models import Update, Comment, Issue, Log, Project, SubProject, Client, CheckIn, User, Ticket, Image
+from projectmanager.models import (
+    Update,
+    Comment,
+    Issue,
+    Log,
+    Project,
+    SubProject,
+    Client,
+    CheckIn,
+    User,
+    Ticket,
+    Image,
+)
 from datetime import datetime
 from rest_framework.response import Response
 from rest_framework.exceptions import PermissionDenied
 from rest_framework.permissions import BasePermission
 from django.utils.text import slugify
 
+
 class ImageSerializer(serializers.ModelSerializer):
     class Meta:
         model = Image
         fields = "__all__"
+
+
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
@@ -115,6 +130,8 @@ class CommentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Comment
         fields = "__all__"
+
+
 class UpdateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Update
@@ -124,6 +141,8 @@ class UpdateSerializer(serializers.ModelSerializer):
 class IssueSerializer(serializers.ModelSerializer):
     comment = CommentSerializer()
     update = UpdateSerializer()
+    assignee = UserSerializer()
+
     class Meta:
         model = Issue
         fields = "__all__"
@@ -134,19 +153,22 @@ class IssueSerializer(serializers.ModelSerializer):
                 project = Project.objects.get(name=data["project"])
                 data["project"] = project.id
             except Project.DoesNotExist:
-                raise serializers.ValidationError({"project":"Project could not be found"})
+                raise serializers.ValidationError(
+                    {"project": "Project could not be found"}
+                )
         if "assignee" in data and isinstance(data["assignee"], str):
             try:
                 user = User.objects.get(name=data["assignee"])
                 data["assignee"] = user.id
             except User.DoesNotExist:
-                raise serializers.ValidationError({"assignee":"Assignee does not exist"})
+                raise serializers.ValidationError(
+                    {"assignee": "Assignee does not exist"}
+                )
         if "comments" not in data:
             data["comments"] = []
         if "updates" not in data:
             data["updates"] = []
         return super().to_internal_value(data)
-
 
 
 class ClientSerializer(serializers.ModelSerializer):
@@ -157,24 +179,30 @@ class ClientSerializer(serializers.ModelSerializer):
 
 class ProjectSerializer(serializers.ModelSerializer):
     sub_project = SubProject
+
     class Meta:
         model = Project
         fields = "__all__"
+
+
 class SubProjectSerializer(serializers.ModelSerializer):
     class Meta:
         model = SubProject
         fields = "__all__"
+
     def to_internal_value(self, data):
         if "users" in data:
-            ids=[]
+            ids = []
             for name in data["users"]:
                 try:
                     user = User.objects.get(name=name)
                     ids.append(user.id)
                 except ObjectDoesNotExist:
-                    continue 
+                    continue
             data["users"] = ids
             return super().to_internal_value(data)
+
+
 class TicketSerializer(serializers.ModelSerializer):
     class Meta:
         model = Ticket
