@@ -58,7 +58,6 @@ class Project(models.Model):
         related_name="created_project",
     )
     users = models.ManyToManyField(User)
-    sub_project = models.ForeignKey("SubProject", on_delete=models.CASCADE, default=1)
 
     def __str__(self):
         return self.name
@@ -69,6 +68,23 @@ class SubProject(models.Model):
     description = models.CharField(max_length=255)
     users = models.ManyToManyField(User)
     projectId = models.ForeignKey(Project, on_delete=models.CASCADE)
+    owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name="owner")
+    createdAt = models.DateField(auto_now=True)
+
+
+class Task(models.Model):
+    description = models.CharField(max_length=255)
+    subproject = models.ForeignKey(Project, on_delete=models.CASCADE)
+    issue = models.ForeignKey("Issue", on_delete=models.CASCADE)
+    content = models.CharField(max_length=255)
+    assignee = models.ManyToManyField(User)
+    dueDate = models.DateField()
+    startDate = models.DateField()
+    updatedAt = models.DateField(auto_now=True)
+    createdAt = models.DateField(auto_now=True)
+    createdBy = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="created_by"
+    )
 
 
 class Comment(models.Model):
@@ -88,13 +104,20 @@ class Update(models.Model):
 
 class Ticket(models.Model):
     description = models.CharField(max_length=255)
-    TYPE_CHOICES = ("Question", "question")
-    PRIORITY_CHOICES = ("Low", "low"), ("Medium", "medium"), ("High", "high")
+    TYPE_CHOICES = (
+        ("Question", "question"),
+        ("Incident", "incident"),
+        ("Problem", "problem"),
+    )
+    PRIORITY_CHOICES = (("Low", "low"), ("Medium", "medium"), ("High", "high"))
     STATUS_CHOICES = (
-        ("Open", "open"),
-        ("In Progress", "in_progress"),
+        ("Accepted", "accepted"),
+        ("Waiting", "waiting"),
         ("Resolved", "resolved"),
     )
+    type = models.CharField(max_length=50, choices=TYPE_CHOICES, default="question")
+    priority = models.CharField(max_length=50, choices=PRIORITY_CHOICES, default="low")
+    status = models.CharField(max_length=50, choices=STATUS_CHOICES, default="waiting")
 
 
 class Issue(models.Model):
@@ -109,7 +132,7 @@ class Issue(models.Model):
         ("feature", "Feature"),
     )
     label = models.CharField(max_length=10, choices=labels, default="task")
-    project = models.ForeignKey(Project, on_delete=models.PROTECT, default=1)
+    project = models.ForeignKey(Project, on_delete=models.PROTECT)
 
     priority_options = (
         ("low", "Low"),
@@ -120,18 +143,20 @@ class Issue(models.Model):
     priority = models.CharField(
         max_length=10, choices=priority_options, default="medium"
     )
-    project = models.ForeignKey(Project, on_delete=models.PROTECT, default=1)
+    project = models.ForeignKey(
+        Project, on_delete=models.PROTECT, blank=True, null=True
+    )
     content = models.CharField(max_length=250)
-    assignee = models.ForeignKey(User, on_delete=models.PROTECT, blank=True, default=1)
+    assignee = models.ManyToManyField(User)
     description = models.CharField(max_length=250)
     createdAt = models.DateField(auto_now=True)
 
     status = models.CharField(max_length=15, choices=options, default="open")
     comment = models.ForeignKey(
-        Comment, on_delete=models.CASCADE, blank=True, default=1
+        Comment, on_delete=models.CASCADE, blank=True, null=True
     )
-    update = models.ForeignKey(Update, on_delete=models.CASCADE, blank=True, default=1)
-    assignee = models.ForeignKey(User, on_delete=models.PROTECT, blank=True, default=1)
+
+    update = models.ForeignKey(Update, on_delete=models.CASCADE, blank=True, null=True)
 
 
 class Log(models.Model):
