@@ -2846,3 +2846,309 @@ INFO 2024-08-27 11:40:56,547 autoreload Watching for file changes with StatReloa
 INFO 2024-08-27 11:40:57,556 logger Request: method=GET, path=/api/projects, headers={'Content-Length': '', 'Content-Type': 'text/plain', 'Host': '127.0.0.1:8000', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,image/svg+xml,*/*;q=0.8', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Connection': 'keep-alive', 'Cookie': 'csrftoken=0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF; tabstyle=raw-tab', 'Upgrade-Insecure-Requests': '1', 'Sec-Fetch-Dest': 'document', 'Sec-Fetch-Mode': 'navigate', 'Sec-Fetch-Site': 'cross-site', 'Priority': 'u=0, i'},cookies={'csrftoken': '0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF', 'tabstyle': 'raw-tab'}, query_params=<QueryDict: {}>,post_data=<QueryDict: {}>
 INFO 2024-08-27 11:40:57,798 logger Request: method=GET, path=/favicon.ico, headers={'Content-Length': '', 'Content-Type': 'text/plain', 'Host': '127.0.0.1:8000', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0', 'Accept': 'image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Referer': 'http://127.0.0.1:8000/api/projects', 'Connection': 'keep-alive', 'Cookie': 'csrftoken=0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF; tabstyle=raw-tab', 'Sec-Fetch-Dest': 'image', 'Sec-Fetch-Mode': 'no-cors', 'Sec-Fetch-Site': 'same-origin', 'Priority': 'u=6'},cookies={'csrftoken': '0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF', 'tabstyle': 'raw-tab'}, query_params=<QueryDict: {}>,post_data=<QueryDict: {}>
 WARNING 2024-08-27 11:40:57,815 log Not Found: /favicon.ico
+INFO 2024-08-27 11:49:17,692 autoreload Watching for file changes with StatReloader
+INFO 2024-08-27 11:49:18,849 logger Request: method=GET, path=/api/subprojects, headers={'Content-Length': '', 'Content-Type': 'text/plain', 'Host': '127.0.0.1:8000', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,image/svg+xml,*/*;q=0.8', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Connection': 'keep-alive', 'Cookie': 'csrftoken=0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF; tabstyle=raw-tab', 'Upgrade-Insecure-Requests': '1', 'Sec-Fetch-Dest': 'document', 'Sec-Fetch-Mode': 'navigate', 'Sec-Fetch-Site': 'none', 'Sec-Fetch-User': '?1', 'Priority': 'u=0, i'},cookies={'csrftoken': '0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF', 'tabstyle': 'raw-tab'}, query_params=<QueryDict: {}>,post_data=<QueryDict: {}>
+INFO 2024-08-27 11:49:19,108 logger Request: method=GET, path=/favicon.ico, headers={'Content-Length': '', 'Content-Type': 'text/plain', 'Host': '127.0.0.1:8000', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0', 'Accept': 'image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Referer': 'http://127.0.0.1:8000/api/subprojects', 'Connection': 'keep-alive', 'Cookie': 'csrftoken=0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF; tabstyle=raw-tab', 'Sec-Fetch-Dest': 'image', 'Sec-Fetch-Mode': 'no-cors', 'Sec-Fetch-Site': 'same-origin', 'Priority': 'u=6'},cookies={'csrftoken': '0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF', 'tabstyle': 'raw-tab'}, query_params=<QueryDict: {}>,post_data=<QueryDict: {}>
+WARNING 2024-08-27 11:49:19,125 log Not Found: /favicon.ico
+INFO 2024-08-27 11:49:38,872 logger Request: method=GET, path=/api/projects, headers={'Content-Length': '', 'Content-Type': 'text/plain', 'Host': '127.0.0.1:8000', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,image/svg+xml,*/*;q=0.8', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Connection': 'keep-alive', 'Cookie': 'csrftoken=0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF; tabstyle=html-tab', 'Upgrade-Insecure-Requests': '1', 'Sec-Fetch-Dest': 'document', 'Sec-Fetch-Mode': 'navigate', 'Sec-Fetch-Site': 'none', 'Sec-Fetch-User': '?1', 'Priority': 'u=0, i'},cookies={'csrftoken': '0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF', 'tabstyle': 'html-tab'}, query_params=<QueryDict: {}>,post_data=<QueryDict: {}>
+INFO 2024-08-27 11:49:39,001 logger Request: method=GET, path=/favicon.ico, headers={'Content-Length': '', 'Content-Type': 'text/plain', 'Host': '127.0.0.1:8000', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0', 'Accept': 'image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Referer': 'http://127.0.0.1:8000/api/projects', 'Connection': 'keep-alive', 'Cookie': 'csrftoken=0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF; tabstyle=html-tab', 'Sec-Fetch-Dest': 'image', 'Sec-Fetch-Mode': 'no-cors', 'Sec-Fetch-Site': 'same-origin', 'Priority': 'u=6'},cookies={'csrftoken': '0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF', 'tabstyle': 'html-tab'}, query_params=<QueryDict: {}>,post_data=<QueryDict: {}>
+WARNING 2024-08-27 11:49:39,017 log Not Found: /favicon.ico
+INFO 2024-08-27 11:50:13,676 logger Request: method=GET, path=/api/subprojects, headers={'Content-Length': '', 'Content-Type': 'text/plain', 'Host': '127.0.0.1:8000', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,image/svg+xml,*/*;q=0.8', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Connection': 'keep-alive', 'Cookie': 'csrftoken=0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF; tabstyle=raw-tab', 'Upgrade-Insecure-Requests': '1', 'Sec-Fetch-Dest': 'document', 'Sec-Fetch-Mode': 'navigate', 'Sec-Fetch-Site': 'none', 'Sec-Fetch-User': '?1', 'Priority': 'u=0, i'},cookies={'csrftoken': '0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF', 'tabstyle': 'raw-tab'}, query_params=<QueryDict: {}>,post_data=<QueryDict: {}>
+INFO 2024-08-27 11:50:22,865 autoreload C:\Users\ASUS\Desktop\ITracker\sync\projectmanager_api\serializers.py changed, reloading.
+INFO 2024-08-27 11:50:23,706 autoreload Watching for file changes with StatReloader
+INFO 2024-08-27 11:50:27,230 logger Request: method=GET, path=/api/subprojects, headers={'Content-Length': '', 'Content-Type': 'text/plain', 'Host': '127.0.0.1:8000', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,image/svg+xml,*/*;q=0.8', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Connection': 'keep-alive', 'Cookie': 'csrftoken=0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF; tabstyle=raw-tab', 'Upgrade-Insecure-Requests': '1', 'Sec-Fetch-Dest': 'document', 'Sec-Fetch-Mode': 'navigate', 'Sec-Fetch-Site': 'cross-site', 'Priority': 'u=0, i'},cookies={'csrftoken': '0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF', 'tabstyle': 'raw-tab'}, query_params=<QueryDict: {}>,post_data=<QueryDict: {}>
+INFO 2024-08-27 11:50:38,877 autoreload C:\Users\ASUS\Desktop\ITracker\sync\projectmanager_api\serializers.py changed, reloading.
+INFO 2024-08-27 11:50:39,756 autoreload Watching for file changes with StatReloader
+INFO 2024-08-27 11:50:48,445 autoreload Watching for file changes with StatReloader
+INFO 2024-08-27 11:50:49,119 logger Request: method=GET, path=/api/subprojects, headers={'Content-Length': '', 'Content-Type': 'text/plain', 'Host': '127.0.0.1:8000', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,image/svg+xml,*/*;q=0.8', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Connection': 'keep-alive', 'Cookie': 'csrftoken=0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF; tabstyle=raw-tab', 'Upgrade-Insecure-Requests': '1', 'Sec-Fetch-Dest': 'document', 'Sec-Fetch-Mode': 'navigate', 'Sec-Fetch-Site': 'none', 'Sec-Fetch-User': '?1', 'Priority': 'u=0, i'},cookies={'csrftoken': '0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF', 'tabstyle': 'raw-tab'}, query_params=<QueryDict: {}>,post_data=<QueryDict: {}>
+INFO 2024-08-27 11:50:57,190 logger Request: method=POST, path=/api/subprojects, headers={'Content-Length': '81', 'Content-Type': 'application/json', 'Host': '127.0.0.1:8000', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0', 'Accept': 'text/html; q=1.0, */*', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Referer': 'http://127.0.0.1:8000/api/subprojects', 'X-Csrftoken': '1Ro9ObSyM11Ad8PRSrcuzNM00D7XGYetRkTE6ByEYe86u9xMoXr0D2afNEhjyiUY', 'X-Requested-With': 'XMLHttpRequest', 'Origin': 'http://127.0.0.1:8000', 'Connection': 'keep-alive', 'Cookie': 'csrftoken=0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF; tabstyle=raw-tab', 'Sec-Fetch-Dest': 'empty', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Site': 'same-origin', 'Priority': 'u=0'},cookies={'csrftoken': '0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF', 'tabstyle': 'raw-tab'}, query_params=<QueryDict: {}>,post_data=<QueryDict: {}>
+WARNING 2024-08-27 11:50:57,205 log Bad Request: /api/subprojects
+INFO 2024-08-27 11:51:20,593 logger Request: method=POST, path=/api/subprojects, headers={'Content-Length': '83', 'Content-Type': 'application/json', 'Host': '127.0.0.1:8000', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0', 'Accept': 'text/html; q=1.0, */*', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Referer': 'http://127.0.0.1:8000/api/subprojects', 'X-Csrftoken': 'SgIJyOynww2XSDoQt2zKpiseR6HnZXW6IJdeQeetIJ9t9E6LZyOgtxQtE7RJRhCB', 'X-Requested-With': 'XMLHttpRequest', 'Origin': 'http://127.0.0.1:8000', 'Connection': 'keep-alive', 'Cookie': 'csrftoken=0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF; tabstyle=raw-tab', 'Sec-Fetch-Dest': 'empty', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Site': 'same-origin', 'Priority': 'u=0'},cookies={'csrftoken': '0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF', 'tabstyle': 'raw-tab'}, query_params=<QueryDict: {}>,post_data=<QueryDict: {}>
+WARNING 2024-08-27 11:51:20,609 log Bad Request: /api/subprojects
+INFO 2024-08-27 11:52:02,007 logger Request: method=GET, path=/api/projects, headers={'Content-Length': '', 'Content-Type': 'text/plain', 'Host': '127.0.0.1:8000', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,image/svg+xml,*/*;q=0.8', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Connection': 'keep-alive', 'Cookie': 'csrftoken=0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF; tabstyle=raw-tab', 'Upgrade-Insecure-Requests': '1', 'Sec-Fetch-Dest': 'document', 'Sec-Fetch-Mode': 'navigate', 'Sec-Fetch-Site': 'none', 'Sec-Fetch-User': '?1', 'Priority': 'u=0, i'},cookies={'csrftoken': '0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF', 'tabstyle': 'raw-tab'}, query_params=<QueryDict: {}>,post_data=<QueryDict: {}>
+INFO 2024-08-27 11:52:02,149 logger Request: method=GET, path=/favicon.ico, headers={'Content-Length': '', 'Content-Type': 'text/plain', 'Host': '127.0.0.1:8000', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0', 'Accept': 'image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Referer': 'http://127.0.0.1:8000/api/projects', 'Connection': 'keep-alive', 'Cookie': 'csrftoken=0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF; tabstyle=raw-tab', 'Sec-Fetch-Dest': 'image', 'Sec-Fetch-Mode': 'no-cors', 'Sec-Fetch-Site': 'same-origin', 'Priority': 'u=6'},cookies={'csrftoken': '0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF', 'tabstyle': 'raw-tab'}, query_params=<QueryDict: {}>,post_data=<QueryDict: {}>
+WARNING 2024-08-27 11:52:02,170 log Not Found: /favicon.ico
+INFO 2024-08-27 11:52:13,459 logger Request: method=POST, path=/api/projects, headers={'Content-Length': '63', 'Content-Type': 'application/json', 'Host': '127.0.0.1:8000', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0', 'Accept': 'text/html; q=1.0, */*', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Referer': 'http://127.0.0.1:8000/api/projects', 'X-Csrftoken': 'Nf27PjlsSZ0wco3Pb4cK79cGVk1L9srSDIxC7J1y4c72tpLKHArgboAVIlb71M7n', 'X-Requested-With': 'XMLHttpRequest', 'Origin': 'http://127.0.0.1:8000', 'Connection': 'keep-alive', 'Cookie': 'csrftoken=0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF; tabstyle=raw-tab', 'Sec-Fetch-Dest': 'empty', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Site': 'same-origin', 'Priority': 'u=0'},cookies={'csrftoken': '0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF', 'tabstyle': 'raw-tab'}, query_params=<QueryDict: {}>,post_data=<QueryDict: {}>
+WARNING 2024-08-27 11:52:13,476 log Bad Request: /api/projects
+INFO 2024-08-27 11:52:44,009 logger Request: method=GET, path=/api/issues, headers={'Content-Length': '', 'Content-Type': 'text/plain', 'Host': '127.0.0.1:8000', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,image/svg+xml,*/*;q=0.8', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Connection': 'keep-alive', 'Cookie': 'csrftoken=0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF; tabstyle=html-tab', 'Upgrade-Insecure-Requests': '1', 'Sec-Fetch-Dest': 'document', 'Sec-Fetch-Mode': 'navigate', 'Sec-Fetch-Site': 'none', 'Sec-Fetch-User': '?1', 'Priority': 'u=0, i'},cookies={'csrftoken': '0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF', 'tabstyle': 'html-tab'}, query_params=<QueryDict: {}>,post_data=<QueryDict: {}>
+INFO 2024-08-27 11:52:44,159 logger Request: method=GET, path=/favicon.ico, headers={'Content-Length': '', 'Content-Type': 'text/plain', 'Host': '127.0.0.1:8000', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0', 'Accept': 'image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Referer': 'http://127.0.0.1:8000/api/issues', 'Connection': 'keep-alive', 'Cookie': 'csrftoken=0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF; tabstyle=html-tab', 'Sec-Fetch-Dest': 'image', 'Sec-Fetch-Mode': 'no-cors', 'Sec-Fetch-Site': 'same-origin', 'Priority': 'u=6'},cookies={'csrftoken': '0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF', 'tabstyle': 'html-tab'}, query_params=<QueryDict: {}>,post_data=<QueryDict: {}>
+WARNING 2024-08-27 11:52:44,159 log Not Found: /favicon.ico
+INFO 2024-08-27 11:54:38,249 autoreload C:\Users\ASUS\Desktop\ITracker\sync\projectmanager_api\serializers.py changed, reloading.
+INFO 2024-08-27 11:54:39,160 autoreload Watching for file changes with StatReloader
+INFO 2024-08-27 11:54:41,238 logger Request: method=GET, path=/api/issues, headers={'Content-Length': '', 'Content-Type': 'text/plain', 'Host': '127.0.0.1:8000', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,image/svg+xml,*/*;q=0.8', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Connection': 'keep-alive', 'Cookie': 'csrftoken=0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF; tabstyle=html-tab', 'Upgrade-Insecure-Requests': '1', 'Sec-Fetch-Dest': 'document', 'Sec-Fetch-Mode': 'navigate', 'Sec-Fetch-Site': 'none', 'Sec-Fetch-User': '?1', 'Priority': 'u=0, i'},cookies={'csrftoken': '0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF', 'tabstyle': 'html-tab'}, query_params=<QueryDict: {}>,post_data=<QueryDict: {}>
+INFO 2024-08-27 11:55:01,922 autoreload C:\Users\ASUS\Desktop\ITracker\sync\projectmanager_api\serializers.py changed, reloading.
+INFO 2024-08-27 11:55:02,780 autoreload Watching for file changes with StatReloader
+INFO 2024-08-27 11:55:07,921 autoreload C:\Users\ASUS\Desktop\ITracker\sync\projectmanager_api\serializers.py changed, reloading.
+INFO 2024-08-27 11:55:08,761 autoreload Watching for file changes with StatReloader
+INFO 2024-08-27 11:55:11,280 autoreload C:\Users\ASUS\Desktop\ITracker\sync\projectmanager_api\serializers.py changed, reloading.
+INFO 2024-08-27 11:55:12,108 autoreload Watching for file changes with StatReloader
+INFO 2024-08-27 11:55:14,623 autoreload C:\Users\ASUS\Desktop\ITracker\sync\projectmanager_api\serializers.py changed, reloading.
+INFO 2024-08-27 11:55:15,489 autoreload Watching for file changes with StatReloader
+INFO 2024-08-27 11:55:17,954 logger Request: method=GET, path=/api/subprojects, headers={'Content-Length': '', 'Content-Type': 'text/plain', 'Host': '127.0.0.1:8000', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,image/svg+xml,*/*;q=0.8', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Connection': 'keep-alive', 'Cookie': 'csrftoken=0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF; tabstyle=html-tab', 'Upgrade-Insecure-Requests': '1', 'Sec-Fetch-Dest': 'document', 'Sec-Fetch-Mode': 'navigate', 'Sec-Fetch-Site': 'none', 'Sec-Fetch-User': '?1', 'Priority': 'u=0, i'},cookies={'csrftoken': '0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF', 'tabstyle': 'html-tab'}, query_params=<QueryDict: {}>,post_data=<QueryDict: {}>
+ERROR 2024-08-27 11:55:18,022 log Internal Server Error: /api/subprojects
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\rest_framework\generics.py", line 243, in get
+    return self.list(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\rest_framework\mixins.py", line 46, in list
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\rest_framework\serializers.py", line 795, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\rest_framework\serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\rest_framework\serializers.py", line 713, in to_representation
+    return [
+           ^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\rest_framework\serializers.py", line 714, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\projectmanager_api\serializers.py", line 191, in to_representation
+    instance.assignee, many=True
+    ^^^^^^^^^^^^^^^^^
+AttributeError: 'SubProject' object has no attribute 'assignee'
+INFO 2024-08-27 11:55:26,313 autoreload C:\Users\ASUS\Desktop\ITracker\sync\projectmanager_api\serializers.py changed, reloading.
+INFO 2024-08-27 11:55:27,185 autoreload Watching for file changes with StatReloader
+INFO 2024-08-27 11:55:29,979 logger Request: method=GET, path=/api/subprojects, headers={'Content-Length': '', 'Content-Type': 'text/plain', 'Host': '127.0.0.1:8000', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,image/svg+xml,*/*;q=0.8', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Connection': 'keep-alive', 'Cookie': 'csrftoken=0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF; tabstyle=html-tab', 'Upgrade-Insecure-Requests': '1', 'Sec-Fetch-Dest': 'document', 'Sec-Fetch-Mode': 'navigate', 'Sec-Fetch-Site': 'cross-site', 'Priority': 'u=0, i'},cookies={'csrftoken': '0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF', 'tabstyle': 'html-tab'}, query_params=<QueryDict: {}>,post_data=<QueryDict: {}>
+INFO 2024-08-27 11:55:30,145 logger Request: method=GET, path=/favicon.ico, headers={'Content-Length': '', 'Content-Type': 'text/plain', 'Host': '127.0.0.1:8000', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0', 'Accept': 'image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Referer': 'http://127.0.0.1:8000/api/subprojects', 'Connection': 'keep-alive', 'Cookie': 'csrftoken=0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF; tabstyle=html-tab', 'Sec-Fetch-Dest': 'image', 'Sec-Fetch-Mode': 'no-cors', 'Sec-Fetch-Site': 'same-origin', 'Priority': 'u=6'},cookies={'csrftoken': '0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF', 'tabstyle': 'html-tab'}, query_params=<QueryDict: {}>,post_data=<QueryDict: {}>
+WARNING 2024-08-27 11:55:30,172 log Not Found: /favicon.ico
+INFO 2024-08-27 11:55:36,350 logger Request: method=POST, path=/api/subprojects, headers={'Content-Length': '706', 'Content-Type': 'multipart/form-data; boundary=---------------------------22018949401099336046799918382', 'Host': '127.0.0.1:8000', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,image/svg+xml,*/*;q=0.8', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Referer': 'http://127.0.0.1:8000/api/subprojects', 'Origin': 'http://127.0.0.1:8000', 'Connection': 'keep-alive', 'Cookie': 'csrftoken=0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF; tabstyle=html-tab', 'Upgrade-Insecure-Requests': '1', 'Sec-Fetch-Dest': 'document', 'Sec-Fetch-Mode': 'navigate', 'Sec-Fetch-Site': 'same-origin', 'Sec-Fetch-User': '?1', 'Priority': 'u=0, i'},cookies={'csrftoken': '0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF', 'tabstyle': 'html-tab'}, query_params=<QueryDict: {}>,post_data=<QueryDict: {'csrfmiddlewaretoken': ['WcANfvxIHMCKy6ycX665qlBZpxMpm3fVMF5ixVdOTZJgP7g7tClBuAZecyWLenVq'], 'users': ['1'], 'projectId': ['1'], 'name': ['233'], 'description': ['32']}>
+ERROR 2024-08-27 11:55:36,444 log Internal Server Error: /api/subprojects
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 329, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: NOT NULL constraint failed: projectmanager_subproject.owner_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\rest_framework\generics.py", line 246, in post
+    return self.create(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\rest_framework\mixins.py", line 24, in perform_create
+    serializer.save()
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\rest_framework\serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\db\models\base.py", line 822, in save
+    self.save_base(
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\db\models\base.py", line 909, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\db\models\base.py", line 1071, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\db\models\base.py", line 1112, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\db\models\query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1823, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 329, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: NOT NULL constraint failed: projectmanager_subproject.owner_id
+INFO 2024-08-27 11:55:42,836 logger Request: method=GET, path=/api/subprojects, headers={'Content-Length': '', 'Content-Type': 'text/plain', 'Host': '127.0.0.1:8000', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,image/svg+xml,*/*;q=0.8', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Connection': 'keep-alive', 'Cookie': 'csrftoken=0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF; tabstyle=html-tab', 'Upgrade-Insecure-Requests': '1', 'Sec-Fetch-Dest': 'document', 'Sec-Fetch-Mode': 'navigate', 'Sec-Fetch-Site': 'none', 'Sec-Fetch-User': '?1', 'Priority': 'u=0, i'},cookies={'csrftoken': '0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF', 'tabstyle': 'html-tab'}, query_params=<QueryDict: {}>,post_data=<QueryDict: {}>
+INFO 2024-08-27 11:56:03,488 autoreload C:\Users\ASUS\Desktop\ITracker\sync\projectmanager_api\serializers.py changed, reloading.
+INFO 2024-08-27 11:56:04,346 autoreload Watching for file changes with StatReloader
+INFO 2024-08-27 11:56:09,199 logger Request: method=GET, path=/api/subprojects, headers={'Content-Length': '', 'Content-Type': 'text/plain', 'Host': '127.0.0.1:8000', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,image/svg+xml,*/*;q=0.8', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Connection': 'keep-alive', 'Cookie': 'csrftoken=0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF; tabstyle=html-tab', 'Upgrade-Insecure-Requests': '1', 'Sec-Fetch-Dest': 'document', 'Sec-Fetch-Mode': 'navigate', 'Sec-Fetch-Site': 'none', 'Sec-Fetch-User': '?1', 'Priority': 'u=0, i'},cookies={'csrftoken': '0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF', 'tabstyle': 'html-tab'}, query_params=<QueryDict: {}>,post_data=<QueryDict: {}>
+INFO 2024-08-27 11:56:16,760 logger Request: method=POST, path=/api/subprojects, headers={'Content-Length': '944', 'Content-Type': 'multipart/form-data; boundary=---------------------------419023177428726144743976379053', 'Host': '127.0.0.1:8000', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,image/svg+xml,*/*;q=0.8', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Referer': 'http://127.0.0.1:8000/api/subprojects', 'Origin': 'http://127.0.0.1:8000', 'Connection': 'keep-alive', 'Cookie': 'csrftoken=0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF; tabstyle=html-tab', 'Upgrade-Insecure-Requests': '1', 'Sec-Fetch-Dest': 'document', 'Sec-Fetch-Mode': 'navigate', 'Sec-Fetch-Site': 'same-origin', 'Sec-Fetch-User': '?1', 'Priority': 'u=0, i'},cookies={'csrftoken': '0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF', 'tabstyle': 'html-tab'}, query_params=<QueryDict: {}>,post_data=<QueryDict: {'csrfmiddlewaretoken': ['57Fe8YeNgYVG7hs3cxGNXBZ800cGY3gvVAaJqoUTsb2coiaYI3Vj1QnnN1m2QnW0'], 'owner.name': ['1'], 'owner.email': ['2'], 'users': ['1'], 'projectId': ['1'], 'name': ['3'], 'description': ['4']}>
+WARNING 2024-08-27 11:56:16,792 log Bad Request: /api/subprojects
+INFO 2024-08-27 11:56:37,062 autoreload C:\Users\ASUS\Desktop\ITracker\sync\projectmanager_api\serializers.py changed, reloading.
+INFO 2024-08-27 11:56:37,919 autoreload Watching for file changes with StatReloader
+INFO 2024-08-27 11:56:50,673 autoreload C:\Users\ASUS\Desktop\ITracker\sync\projectmanager_api\serializers.py changed, reloading.
+INFO 2024-08-27 11:56:51,508 autoreload Watching for file changes with StatReloader
+INFO 2024-08-27 11:56:55,262 logger Request: method=POST, path=/api/subprojects, headers={'Content-Length': '944', 'Content-Type': 'multipart/form-data; boundary=---------------------------419023177428726144743976379053', 'Host': '127.0.0.1:8000', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,image/svg+xml,*/*;q=0.8', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Referer': 'http://127.0.0.1:8000/api/subprojects', 'Origin': 'http://127.0.0.1:8000', 'Connection': 'keep-alive', 'Cookie': 'csrftoken=0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF; tabstyle=html-tab', 'Upgrade-Insecure-Requests': '1', 'Sec-Fetch-Dest': 'document', 'Sec-Fetch-Mode': 'navigate', 'Sec-Fetch-Site': 'same-origin', 'Priority': 'u=0, i'},cookies={'csrftoken': '0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF', 'tabstyle': 'html-tab'}, query_params=<QueryDict: {}>,post_data=<QueryDict: {'csrfmiddlewaretoken': ['57Fe8YeNgYVG7hs3cxGNXBZ800cGY3gvVAaJqoUTsb2coiaYI3Vj1QnnN1m2QnW0'], 'owner.name': ['1'], 'owner.email': ['2'], 'users': ['1'], 'projectId': ['1'], 'name': ['3'], 'description': ['4']}>
+WARNING 2024-08-27 11:56:55,331 log Bad Request: /api/subprojects
+INFO 2024-08-27 11:56:58,894 logger Request: method=POST, path=/api/subprojects, headers={'Content-Length': '786', 'Content-Type': 'multipart/form-data; boundary=---------------------------3792781976647424409243965', 'Host': '127.0.0.1:8000', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,image/svg+xml,*/*;q=0.8', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Referer': 'http://127.0.0.1:8000/api/subprojects', 'Origin': 'http://127.0.0.1:8000', 'Connection': 'keep-alive', 'Cookie': 'csrftoken=0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF; tabstyle=html-tab', 'Upgrade-Insecure-Requests': '1', 'Sec-Fetch-Dest': 'document', 'Sec-Fetch-Mode': 'navigate', 'Sec-Fetch-Site': 'same-origin', 'Sec-Fetch-User': '?1', 'Priority': 'u=0, i'},cookies={'csrftoken': '0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF', 'tabstyle': 'html-tab'}, query_params=<QueryDict: {}>,post_data=<QueryDict: {'csrfmiddlewaretoken': ['Ceuh1nIb18lxyrbL1QM0WieBTCSRUvW2sHZMjNohdls3PsTGxm1w0xCQGD2dMPCx'], 'owner': ['1'], 'users': ['1'], 'projectId': ['1'], 'name': ['3'], 'description': ['4']}>
+ERROR 2024-08-27 11:56:59,004 log Internal Server Error: /api/subprojects
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\rest_framework\generics.py", line 246, in post
+    return self.create(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\rest_framework\mixins.py", line 20, in create
+    headers = self.get_success_headers(serializer.data)
+                                       ^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\rest_framework\serializers.py", line 571, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\rest_framework\serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\projectmanager_api\serializers.py", line 191, in to_representation
+    representation["owner"] = BasicUserSerializer(instance.owner, many=True).data
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\rest_framework\serializers.py", line 795, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\rest_framework\serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\rest_framework\serializers.py", line 713, in to_representation
+    return [
+           ^
+TypeError: 'User' object is not iterable
+INFO 2024-08-27 11:57:11,340 autoreload C:\Users\ASUS\Desktop\ITracker\sync\projectmanager_api\serializers.py changed, reloading.
+INFO 2024-08-27 11:57:12,194 autoreload Watching for file changes with StatReloader
+INFO 2024-08-27 11:57:14,127 logger Request: method=POST, path=/api/subprojects, headers={'Content-Length': '944', 'Content-Type': 'multipart/form-data; boundary=---------------------------419023177428726144743976379053', 'Host': '127.0.0.1:8000', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,image/svg+xml,*/*;q=0.8', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Referer': 'http://127.0.0.1:8000/api/subprojects', 'Origin': 'http://127.0.0.1:8000', 'Connection': 'keep-alive', 'Cookie': 'csrftoken=0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF; tabstyle=html-tab', 'Upgrade-Insecure-Requests': '1', 'Sec-Fetch-Dest': 'document', 'Sec-Fetch-Mode': 'navigate', 'Sec-Fetch-Site': 'same-origin', 'Priority': 'u=0, i'},cookies={'csrftoken': '0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF', 'tabstyle': 'html-tab'}, query_params=<QueryDict: {}>,post_data=<QueryDict: {'csrfmiddlewaretoken': ['57Fe8YeNgYVG7hs3cxGNXBZ800cGY3gvVAaJqoUTsb2coiaYI3Vj1QnnN1m2QnW0'], 'owner.name': ['1'], 'owner.email': ['2'], 'users': ['1'], 'projectId': ['1'], 'name': ['3'], 'description': ['4']}>
+WARNING 2024-08-27 11:57:14,190 log Bad Request: /api/subprojects
+INFO 2024-08-27 11:57:18,896 logger Request: method=POST, path=/api/subprojects, headers={'Content-Length': '814', 'Content-Type': 'multipart/form-data; boundary=---------------------------64091281726997559602382656763', 'Host': '127.0.0.1:8000', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,image/svg+xml,*/*;q=0.8', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Referer': 'http://127.0.0.1:8000/api/subprojects', 'Origin': 'http://127.0.0.1:8000', 'Connection': 'keep-alive', 'Cookie': 'csrftoken=0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF; tabstyle=html-tab', 'Upgrade-Insecure-Requests': '1', 'Sec-Fetch-Dest': 'document', 'Sec-Fetch-Mode': 'navigate', 'Sec-Fetch-Site': 'same-origin', 'Sec-Fetch-User': '?1', 'Priority': 'u=0, i'},cookies={'csrftoken': '0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF', 'tabstyle': 'html-tab'}, query_params=<QueryDict: {}>,post_data=<QueryDict: {'csrfmiddlewaretoken': ['zPIudShw8AiuyeIWXUpZ08ukHGLW6iqipidZviXCkNp0PfqRtqEv4nSzuHViYC6N'], 'owner': ['1'], 'users': ['1'], 'projectId': ['1'], 'name': ['3'], 'description': ['4']}>
+ERROR 2024-08-27 11:57:19,006 log Internal Server Error: /api/subprojects
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\rest_framework\generics.py", line 246, in post
+    return self.create(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\rest_framework\mixins.py", line 20, in create
+    headers = self.get_success_headers(serializer.data)
+                                       ^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\rest_framework\serializers.py", line 571, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\rest_framework\serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\projectmanager_api\serializers.py", line 191, in to_representation
+    representation["owner"] = BasicUserSerializer(instance.owner, many=True).data
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\rest_framework\serializers.py", line 795, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\rest_framework\serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Desktop\ITracker\sync\venv\Lib\site-packages\rest_framework\serializers.py", line 713, in to_representation
+    return [
+           ^
+TypeError: 'User' object is not iterable
+INFO 2024-08-27 11:58:13,605 autoreload C:\Users\ASUS\Desktop\ITracker\sync\projectmanager_api\serializers.py changed, reloading.
+INFO 2024-08-27 11:58:14,497 autoreload Watching for file changes with StatReloader
+INFO 2024-08-27 11:58:15,966 logger Request: method=POST, path=/api/subprojects, headers={'Content-Length': '814', 'Content-Type': 'multipart/form-data; boundary=---------------------------64091281726997559602382656763', 'Host': '127.0.0.1:8000', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,image/svg+xml,*/*;q=0.8', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Referer': 'http://127.0.0.1:8000/api/subprojects', 'Origin': 'http://127.0.0.1:8000', 'Connection': 'keep-alive', 'Cookie': 'csrftoken=0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF; tabstyle=html-tab', 'Upgrade-Insecure-Requests': '1', 'Sec-Fetch-Dest': 'document', 'Sec-Fetch-Mode': 'navigate', 'Sec-Fetch-Site': 'same-origin', 'Sec-Fetch-User': '?1', 'Priority': 'u=0, i'},cookies={'csrftoken': '0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF', 'tabstyle': 'html-tab'}, query_params=<QueryDict: {}>,post_data=<QueryDict: {'csrfmiddlewaretoken': ['zPIudShw8AiuyeIWXUpZ08ukHGLW6iqipidZviXCkNp0PfqRtqEv4nSzuHViYC6N'], 'owner': ['1'], 'users': ['1'], 'projectId': ['1'], 'name': ['3'], 'description': ['4']}>
+INFO 2024-08-27 11:58:40,827 logger Request: method=POST, path=/api/subprojects, headers={'Content-Length': '99', 'Content-Type': 'application/json', 'Host': '127.0.0.1:8000', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0', 'Accept': 'text/html; q=1.0, */*', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Referer': 'http://127.0.0.1:8000/api/subprojects', 'X-Csrftoken': 'aC1BWNSagJt0dUd3Uc8ZLREe7y6dYikl05w6edygsWAwuVVYqInvP62tUzgzQC0Q', 'X-Requested-With': 'XMLHttpRequest', 'Origin': 'http://127.0.0.1:8000', 'Connection': 'keep-alive', 'Cookie': 'csrftoken=0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF; tabstyle=raw-tab', 'Sec-Fetch-Dest': 'empty', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Site': 'same-origin', 'Priority': 'u=0'},cookies={'csrftoken': '0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF', 'tabstyle': 'raw-tab'}, query_params=<QueryDict: {}>,post_data=<QueryDict: {}>
+INFO 2024-08-27 11:59:39,534 autoreload Watching for file changes with StatReloader
+INFO 2024-08-27 11:59:40,389 logger Request: method=GET, path=/api/projects, headers={'Content-Length': '', 'Content-Type': 'text/plain', 'Host': '127.0.0.1:8000', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,image/svg+xml,*/*;q=0.8', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Connection': 'keep-alive', 'Cookie': 'csrftoken=0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF; tabstyle=raw-tab', 'Upgrade-Insecure-Requests': '1', 'Sec-Fetch-Dest': 'document', 'Sec-Fetch-Mode': 'navigate', 'Sec-Fetch-Site': 'none', 'Sec-Fetch-User': '?1', 'Priority': 'u=0, i'},cookies={'csrftoken': '0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF', 'tabstyle': 'raw-tab'}, query_params=<QueryDict: {}>,post_data=<QueryDict: {}>
+INFO 2024-08-27 11:59:48,609 logger Request: method=POST, path=/api/projects, headers={'Content-Length': '77', 'Content-Type': 'application/json', 'Host': '127.0.0.1:8000', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0', 'Accept': 'text/html; q=1.0, */*', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Referer': 'http://127.0.0.1:8000/api/projects', 'X-Csrftoken': 'O3jPhE1ObPoFbFhdCQNyctfgWl9p4zvdEwOkz4HUn2vbsGZ88m24gIDvJmjLWTbI', 'X-Requested-With': 'XMLHttpRequest', 'Origin': 'http://127.0.0.1:8000', 'Connection': 'keep-alive', 'Cookie': 'csrftoken=0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF; tabstyle=raw-tab', 'Sec-Fetch-Dest': 'empty', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Site': 'same-origin', 'Priority': 'u=0'},cookies={'csrftoken': '0DFFsAQgmnhGrbS5GGpGepypXbkw2uQF', 'tabstyle': 'raw-tab'}, query_params=<QueryDict: {}>,post_data=<QueryDict: {}>

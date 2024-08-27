@@ -156,6 +156,16 @@ class IssueSerializer(serializers.ModelSerializer):
         model = Issue
         fields = "__all__"
 
+    def to_representation(self, instance):
+
+        representation = super().to_representation(instance)
+
+        representation["assignee"] = BasicUserSerializer(
+            instance.assignee, many=True
+        ).data
+
+        return representation
+
 
 class ClientSerializer(serializers.ModelSerializer):
     class Meta:
@@ -164,27 +174,43 @@ class ClientSerializer(serializers.ModelSerializer):
 
 
 class SubProjectSerializer(serializers.ModelSerializer):
-    owner = BasicUserSerializer()
-    users = BasicUserSerializer(many=True)
-    projectId = serializers.PrimaryKeyRelatedField(read_only=True)
+    owner = serializers.PrimaryKeyRelatedField(queryset=User.objects.all(), many=False)
+    users = serializers.PrimaryKeyRelatedField(queryset=User.objects.all(), many=True)
+    projectId = serializers.PrimaryKeyRelatedField(queryset=Project.objects.all())
     createdAt = serializers.DateField(read_only=True)
 
     class Meta:
         model = SubProject
         fields = "__all__"
 
+    def to_representation(self, instance):
+
+        representation = super().to_representation(instance)
+
+        representation["users"] = BasicUserSerializer(instance.users, many=True).data
+        representation["owner"] = BasicUserSerializer(instance.owner, many=False).data
+        return representation
+
 
 class ProjectSerializer(serializers.ModelSerializer):
     name = serializers.CharField(max_length=100)
-    owner = BasicUserSerializer(read_only=True)
+    owner = serializers.PrimaryKeyRelatedField(queryset=User.objects.all(), many=False)
+    users = serializers.PrimaryKeyRelatedField(queryset=User.objects.all(), many=True)
     createdAt = serializers.DateField(read_only=True)
-    users = BasicUserSerializer(many=True)
 
     class Meta:
         model = Project
         fields = "__all__"
 
     sub_projects = serializers.SerializerMethodField()
+
+    def to_representation(self, instance):
+
+        representation = super().to_representation(instance)
+
+        representation["users"] = BasicUserSerializer(instance.users, many=True).data
+        representation["owner"] = BasicUserSerializer(instance.owner, many=False).data
+        return representation
 
     def get_sub_projects(self, obj):
 
