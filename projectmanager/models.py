@@ -104,17 +104,22 @@ class Update(models.Model):
 
 class Ticket(models.Model):
     description = models.CharField(max_length=255)
-    TYPE_CHOICES = (
-        ("Question", "question"),
-        ("Incident", "incident"),
-        ("Problem", "problem"),
-    )
-    PRIORITY_CHOICES = (("Low", "low"), ("Medium", "medium"), ("High", "high"))
-    STATUS_CHOICES = (
+    PRIORITY_CHOICES = [
+        ("low", "Low"),
+        ("medium", "Medium"),
+        ("high", "High"),
+    ]
+
+    TYPE_CHOICES = [
+        ("bug", "Bug"),
+        ("feature", "Feature"),
+        ("question", "Question"),
+    ]
+    STATUS_CHOICES = [
         ("Accepted", "accepted"),
         ("Waiting", "waiting"),
         ("Resolved", "resolved"),
-    )
+    ]
     type = models.CharField(max_length=50, choices=TYPE_CHOICES, default="question")
     priority = models.CharField(max_length=50, choices=PRIORITY_CHOICES, default="low")
     status = models.CharField(max_length=50, choices=STATUS_CHOICES, default="waiting")
