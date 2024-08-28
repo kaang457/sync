@@ -191,8 +191,23 @@ class IssueList(generics.ListCreateAPIView):
     queryset = Issue.objects.all()
     serializer_class = IssueSerializer
 
+    def create(self, request, *args, **kwargs):
+        data = request.data.copy()
+        if data["ticket"] != None:
+            ticket = Ticket.objects.get(id=data["ticket"])
+            data["description"] = ticket.description
+            data["content"] = ticket.content
+            data["priority"] = ticket.priority
+            data["convertedFromTicket"] = True
+            data["status"] = "open"
+        serializer = IssueSerializer(data=data)
+        if serializer.is_valid():
+            issue = serializer.save()
+            return Response(IssueSerializer(issue).data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-@api_view(["GET", "PUT"])
+
+@api_view(["GET", "PUT", "POST"])
 def issue_detail(request, id):
     issue = get_object_or_404(Issue, id=id)
 
@@ -286,24 +301,33 @@ def ticket_detail(request, id):
         return Response(serializer.data)
 
     elif request.method == "PUT":
+        # data = request.data.copy()
+        # data["description"] = ticket.description
+        # data["priority"] = ticket.priority
+        # data["ticket"] = id
+        # data["convertFromTicket"] = True
+
+        # issue_serializer = IssueSerializer(data=data)
+
+        # if issue_serializer.is_valid():
+        #     issue = issue_serializer.save()
+        #     issue.description = ticket.description
+        #     issue.ticket = ticket
+        #     issue.convertedFromTicket = True
+        #     issue.priority = ticket.priority
+        #     issue.save()
+        #
+        #     return Response(
+        #        TicketSerializer(issue).data, status=status.HTTP_201_CREATED
+        #     )
         data = request.data.copy()
         data["description"] = ticket.description
-        data["priority"] = ticket.priority
-        data["ticket"] = id
-        data["convertFromTicket"] = True
-
-        issue_serializer = IssueSerializer(data=data)
-
-        if issue_serializer.is_valid():
-            issue = issue_serializer.save()
-            issue.description = ticket.description
-            issue.ticket = ticket
-            issue.convertedFromTicket = True
-            issue.priority = ticket.priority
-            issue.save()
-
+        data["content"] = ticket.content
+        data["accepted"] = ticket.accepted
+        ticket_serializer = TicketSerializer(data=data)
+        if ticket_serializer.is_valid():
+            ticket = ticket_serializer.save()
             return Response(
-                TicketSerializer(issue).data, status=status.HTTP_201_CREATED
+                TicketSerializer(ticket).data, status=status.HTTP_201_CREATED
             )
-
-        return Response(issue_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        return Response(ticket_serializer.errors, status=status.HTTP_400_BAD_REQUEST)

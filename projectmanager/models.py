@@ -116,16 +116,17 @@ class Ticket(models.Model):
         ("bug", "Bug"),
         ("feature", "Feature"),
         ("question", "Question"),
+        ("problem", "Problem"),
     ]
     STATUS_CHOICES = [
-        ("Accepted", "accepted"),
-        ("Waiting", "waiting"),
-        ("Resolved", "resolved"),
+        ("accepted", "accepted"),
+        ("waiting", "waiting"),
+        ("resolved", "resolved"),
     ]
     accepted = models.BooleanField(default=False)
-    type = models.CharField(max_length=50, choices=TYPE_CHOICES, default="question")
-    priority = models.CharField(max_length=50, choices=PRIORITY_CHOICES, default="low")
-    status = models.CharField(max_length=50, choices=STATUS_CHOICES, default="waiting")
+    type = models.CharField(max_length=50, choices=TYPE_CHOICES)
+    priority = models.CharField(max_length=50, choices=PRIORITY_CHOICES)
+    status = models.CharField(max_length=50, choices=STATUS_CHOICES)
 
 
 class Issue(models.Model):
