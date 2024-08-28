@@ -155,7 +155,7 @@ class Issue(models.Model):
     project = models.ForeignKey(
         Project, on_delete=models.PROTECT, blank=True, null=True
     )
-    content = models.CharField(max_length=250)
+    content = models.CharField(max_length=250, blank=True, null=True)
     assignee = models.ManyToManyField(User)
     description = models.CharField(max_length=250)
     createdAt = models.DateField(auto_now=True)
