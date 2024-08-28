@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Issue Detail</title>
+</head>
+<body>
+    <h1>Issue Details</h1>
+    <div>
+        <!-- Display serialized issue data here -->
+        <pre>{{ serializer|json_script:"issue_data" }}</pre>
+    </div>
+
+    <h2>Add a Task</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

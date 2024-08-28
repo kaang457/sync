@@ -11,6 +11,7 @@ from projectmanager.models import (
     User,
     Ticket,
     Image,
+    Task,
 )
 from datetime import datetime
 from rest_framework.response import Response
@@ -228,4 +229,10 @@ class BasicTicketSerializer(serializers.ModelSerializer):
 class TicketSerializer(serializers.ModelSerializer):
     class Meta:
         model = Ticket
+        fields = "__all__"
+
+
+class TaskSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Task
         fields = "__all__"

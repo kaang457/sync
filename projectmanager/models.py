@@ -104,6 +104,7 @@ class Update(models.Model):
 
 class Ticket(models.Model):
     description = models.CharField(max_length=255)
+    content = models.CharField(max_length=255, default="", blank=True, null=True)
     PRIORITY_CHOICES = [
         ("low", "Low"),
         ("medium", "Medium"),
@@ -120,6 +121,7 @@ class Ticket(models.Model):
         ("Waiting", "waiting"),
         ("Resolved", "resolved"),
     ]
+    accepted = models.BooleanField(default=False)
     type = models.CharField(max_length=50, choices=TYPE_CHOICES, default="question")
     priority = models.CharField(max_length=50, choices=PRIORITY_CHOICES, default="low")
     status = models.CharField(max_length=50, choices=STATUS_CHOICES, default="waiting")
@@ -131,12 +133,14 @@ class Issue(models.Model):
         ("in_progress", "In Progress"),
         ("resolved", "Resolved"),
     )
-    labels = (
-        ("task", "Task"),
+    labels = [
+        ("documentation", "Documentation"),
         ("bug", "Bug"),
         ("feature", "Feature"),
-    )
-    label = models.CharField(max_length=10, choices=labels, default="task")
+        ("cosmetic", "Cosmetic"),
+        ("exception", "Exception"),
+    ]
+    label = models.CharField(max_length=20, choices=labels, default="task")
     project = models.ForeignKey(Project, on_delete=models.PROTECT)
 
     priority_options = (
@@ -155,7 +159,8 @@ class Issue(models.Model):
     assignee = models.ManyToManyField(User)
     description = models.CharField(max_length=250)
     createdAt = models.DateField(auto_now=True)
-
+    ticket = models.ForeignKey(Ticket, on_delete=models.CASCADE, blank=True, null=True)
+    convertedFromTicket = models.BooleanField(default=False)
     status = models.CharField(max_length=15, choices=options, default="open")
     comment = models.ForeignKey(
         Comment, on_delete=models.CASCADE, blank=True, null=True

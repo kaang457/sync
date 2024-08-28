@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 from rest_framework import generics, status, viewsets
 from rest_framework.decorators import (
     api_view,
@@ -20,7 +20,9 @@ from projectmanager.models import (
     User,
     Ticket,
 )
+from django.urls import reverse
 from .serializers import *
+from .forms import *
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated, AllowAny
@@ -35,6 +37,8 @@ from rest_framework_simplejwt.tokens import AccessToken
 from django.utils import timezone
 from datetime import timedelta
 from django.http import HttpRequest
+from rest_framework.renderers import BrowsableAPIRenderer, JSONRenderer
+from rest_framework.decorators import renderer_classes
 
 
 class ImageView(generics.ListCreateAPIView):
@@ -188,10 +192,19 @@ class IssueList(generics.ListCreateAPIView):
     serializer_class = IssueSerializer
 
 
-class IssueRetrieve(generics.RetrieveAPIView):
-    queryset = Issue.objects.all()
-    serializer_class = IssueSerializer
-    lookup_field = "id"
+@api_view(["GET", "POST"])
+def issue_detail(request, id):
+    issue = get_object_or_404(Issue, id=id)
+
+    if request.method == "GET":
+
+        serializer = IssueSerializer(issue)
+
+        return Response(serializer.data)
+
+    elif request.method == "POST":
+
+        return Response(TaskSerializer(task).data, status=status.HTTP_201_CREATED)
 
 
 class ClientList(viewsets.ModelViewSet):
@@ -217,3 +230,35 @@ class TicketList(generics.ListCreateAPIView):
 class TicketUpdate(generics.RetrieveUpdateAPIView):
     queryset = Ticket.objects.all()
     serializer_class = TicketSerializer
+
+
+@api_view(["GET", "PUT"])
+def ticket_detail(request, id):
+    ticket = get_object_or_404(Ticket, id=id)
+
+    if request.method == "GET":
+        serializer = TicketSerializer(ticket)
+        return Response(serializer.data)
+
+    elif request.method == "PUT":
+        data = request.data.copy()
+        data["description"] = ticket.description
+        data["priority"] = ticket.priority
+        data["ticket"] = id
+        data["convertFromTicket"] = True
+
+        issue_serializer = IssueSerializer(data=data)
+
+        if issue_serializer.is_valid():
+            issue = issue_serializer.save()
+            issue.description = ticket.description
+            issue.ticket = ticket
+            issue.convertedFromTicket = True
+            issue.priority = ticket.priority
+            issue.save()
+
+            return Response(
+                TicketSerializer(issue).data, status=status.HTTP_201_CREATED
+            )
+
+        return Response(issue_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
