@@ -74,15 +74,16 @@ class SubProject(models.Model):
 
 class Task(models.Model):
     description = models.CharField(max_length=255)
-    subproject = models.ForeignKey(Project, on_delete=models.CASCADE)
+    subproject = models.ForeignKey(
+        SubProject, on_delete=models.CASCADE, null=True, blank=True
+    )
     issue = models.ForeignKey("Issue", on_delete=models.CASCADE)
     content = models.CharField(max_length=255)
     assignee = models.ManyToManyField(User)
-    dueDate = models.DateField()
-    startDate = models.DateField()
-    updatedAt = models.DateField(auto_now=True)
-    createdAt = models.DateField(auto_now=True)
-    createdBy = models.ForeignKey(
+    due_date = models.DateField()
+    updated_at = models.DateField(blank=True, null=True)
+    created_at = models.DateField(auto_now=True)
+    created_by = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="created_by"
     )
 
@@ -97,9 +98,9 @@ class Comment(models.Model):
 
 class Update(models.Model):
     field = models.CharField(max_length=50)
-    oldValue = models.CharField(max_length=50)
-    newValue = models.CharField(max_length=50)
-    createdAt = models.DateTimeField(auto_now=True)
+    old_value = models.CharField(max_length=50)
+    new_value = models.CharField(max_length=50)
+    created_at = models.DateTimeField(auto_now=True)
 
 
 class Ticket(models.Model):
@@ -155,6 +156,9 @@ class Issue(models.Model):
     project = models.ForeignKey(
         Project, on_delete=models.PROTECT, blank=True, null=True
     )
+    subproject = models.ForeignKey(
+        SubProject, on_delete=models.CASCADE, null=True, blank=True
+    )
     content = models.CharField(max_length=250, blank=True, null=True)
     assignee = models.ManyToManyField(User)
     description = models.CharField(max_length=250)
@@ -165,7 +169,7 @@ class Issue(models.Model):
     comment = models.ForeignKey(
         Comment, on_delete=models.CASCADE, blank=True, null=True
     )
-
+    updated_at = models.DateField(blank=True, null=True)
     update = models.ForeignKey(Update, on_delete=models.CASCADE, blank=True, null=True)
 
 

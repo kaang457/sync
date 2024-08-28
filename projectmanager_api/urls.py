@@ -17,7 +17,7 @@ urlpatterns = [
     path("logs", LogList.as_view(), name="listcreate"),
     path("logs/<int:pk>", LogDetail.as_view(), name="detailcreate"),
     path("issues", IssueList.as_view(), name="issuelist"),
-    path("issues/<int:pk>", issue_detail, name="issue_detail"),
+    path("issues/<int:id>", issue_detail, name="issue_detail"),
     path("", include(router.urls)),
     path("projects", ProjectList.as_view(), name="ProjectList"),
     re_path("signup", signup),

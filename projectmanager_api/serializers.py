@@ -167,6 +167,14 @@ class IssueSerializer(serializers.ModelSerializer):
 
         return representation
 
+    tasks = serializers.SerializerMethodField()
+
+    def get_tasks(self, obj):
+
+        tasks = Task.objects.filter(issue=obj)
+
+        return TaskSerializer(tasks, many=True).data
+
 
 class ClientSerializer(serializers.ModelSerializer):
     class Meta:

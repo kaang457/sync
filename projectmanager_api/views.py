@@ -192,19 +192,64 @@ class IssueList(generics.ListCreateAPIView):
     serializer_class = IssueSerializer
 
 
-@api_view(["GET", "POST"])
+@api_view(["GET", "PUT"])
 def issue_detail(request, id):
     issue = get_object_or_404(Issue, id=id)
 
     if request.method == "GET":
-
         serializer = IssueSerializer(issue)
-
         return Response(serializer.data)
 
-    elif request.method == "POST":
+    elif request.method == "PUT":
+        data = request.data.copy()
+        if data["type"] == "comment":
+            data.pop("type")
+            data["issue"] = issue
+            comment_serializer = CommentSerializer(data=data)
+            if comment_serializer.is_valid():
+                comment = comment_serializer.save()
+                issue.comment = comment
+            else:
+                return Response(
+                    comment_serializer.errors, status=status.HTTP_400_BAD_REQUEST
+                )
 
-        return Response(TaskSerializer(task).data, status=status.HTTP_201_CREATED)
+        elif data["type"] == "update":
+            data.pop("type")
+            data["issue"] = issue
+            if hasattr(issue, data["field"]):
+                old_value = getattr(issue, data["field"])
+                data["old_value"] = old_value
+
+            update_serializer = UpdateSerializer(data=data)
+            if update_serializer.is_valid():
+                update = update_serializer.save()
+                field_name = update.field
+                old_value = update.old_value
+                new_value = update.new_value
+                issue.updated_at = update.created_at
+                issue.update = update
+                if hasattr(issue, field_name):
+                    setattr(issue, field_name, new_value)
+                    issue.save()
+        elif data["type"] == "task":
+            data.pop("type")
+            data["issue"] = issue.id
+            data["user"] = request.user
+            data["subproject"] = issue.subproject
+            data["project"] = issue.project
+
+            task_serializer = TaskSerializer(data=data)
+            if task_serializer.is_valid():
+                task = task_serializer.save()
+                return Response(
+                    TaskSerializer(task).data, status=status.HTTP_201_CREATED
+                )
+            else:
+                return Response(
+                    task_serializer.errors, status=status.HTTP_400_BAD_REQUEST
+                )
+        return Response(IssueSerializer(issue).data, status=status.HTTP_200_OK)
 
 
 class ClientList(viewsets.ModelViewSet):
