@@ -231,13 +231,14 @@ class ProjectSerializer(serializers.ModelSerializer):
 class BasicTicketSerializer(serializers.ModelSerializer):
     class Meta:
         model = Ticket
-        fields = "__all__"
+        fields = ["description", "content"]
 
 
 class TicketSerializer(serializers.ModelSerializer):
     class Meta:
         model = Ticket
         fields = "__all__"
+        read_only_fields = ["created_at", "updated_at", "accepted"]
 
 
 class TaskSerializer(serializers.ModelSerializer):

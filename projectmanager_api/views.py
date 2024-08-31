@@ -195,9 +195,6 @@ class IssueList(generics.ListCreateAPIView):
         data = request.data.copy()
         if data["ticket"] != None:
             ticket = Ticket.objects.get(id=data["ticket"])
-            data["description"] = ticket.description
-            data["content"] = ticket.content
-            data["priority"] = ticket.priority
             data["convertedFromTicket"] = True
             data["status"] = "open"
         serializer = IssueSerializer(data=data)
@@ -301,25 +298,6 @@ def ticket_detail(request, id):
         return Response(serializer.data)
 
     elif request.method == "PUT":
-        # data = request.data.copy()
-        # data["description"] = ticket.description
-        # data["priority"] = ticket.priority
-        # data["ticket"] = id
-        # data["convertFromTicket"] = True
-
-        # issue_serializer = IssueSerializer(data=data)
-
-        # if issue_serializer.is_valid():
-        #     issue = issue_serializer.save()
-        #     issue.description = ticket.description
-        #     issue.ticket = ticket
-        #     issue.convertedFromTicket = True
-        #     issue.priority = ticket.priority
-        #     issue.save()
-        #
-        #     return Response(
-        #        TicketSerializer(issue).data, status=status.HTTP_201_CREATED
-        #     )
         data = request.data.copy()
         data["description"] = ticket.description
         data["content"] = ticket.content

@@ -86,6 +86,7 @@ class Task(models.Model):
     created_by = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="created_by"
     )
+    man_hours = models.FloatField(default=0.0)
 
 
 class Comment(models.Model):
