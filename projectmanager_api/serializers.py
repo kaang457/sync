@@ -10,7 +10,6 @@ from projectmanager.models import (
     CheckIn,
     User,
     Ticket,
-    Image,
     Task,
 )
 from datetime import datetime
@@ -19,12 +18,6 @@ from rest_framework.exceptions import PermissionDenied
 from rest_framework.permissions import BasePermission
 from django.utils.text import slugify
 from django.core.exceptions import ObjectDoesNotExist
-
-
-class ImageSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Image
-        fields = "__all__"
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -47,52 +40,6 @@ class BasicUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ["name", "email"]
-
-
-class CheckInSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = CheckIn
-        fields = "__all__"
-
-
-class LogSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Log
-        fields = (
-            "id",
-            "task",
-            "status",
-            "is_billable",
-            "start_time",
-            "end_time",
-            "read_only",
-            "terminate",
-        )
-        read_only_fields = ["read_only", "terminate"]
-
-
-class LogUpdateSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Log
-        fields = [
-            "id",
-            "task",
-            "status",
-            "is_billable",
-            "start_time",
-            "end_time",
-            "total_time",
-            "terminate",
-        ]
-        read_only_fields = (
-            "id",
-            "task",
-            "status",
-            "is_billable",
-            "start_time",
-            "total_time",
-            "end_time",
-        )
 
     def update(self, instance, validated_data):
         time_format = "%H:%M:%S.%f"

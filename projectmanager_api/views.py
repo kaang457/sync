@@ -10,7 +10,6 @@ from rest_framework.authentication import SessionAuthentication, TokenAuthentica
 from projectmanager.models import (
     Update,
     Comment,
-    Image,
     Log,
     Issue,
     Project,
@@ -39,12 +38,6 @@ from datetime import timedelta
 from django.http import HttpRequest
 from rest_framework.renderers import BrowsableAPIRenderer, JSONRenderer
 from rest_framework.decorators import renderer_classes
-
-
-class ImageView(generics.ListCreateAPIView):
-    permission_classes = [AllowAny]
-    queryset = Image.objects.all()
-    serializer_class = ImageSerializer
 
 
 class CustomTokenRefreshView(TokenRefreshView):
@@ -99,6 +92,32 @@ class CustomTokenObtainPairView(TokenObtainPairView):
         return response
 
 
+@api_view(["GET"])
+def profile(request, id):
+    user = User.objects.all().get(id=id)
+    serializer = BasicUserSerializer(user)
+    tasks = Task.objects.filter(assignee__in=[user])
+    projects = Project.objects.filter(users__in=[user])
+    subprojects = SubProject.objects.filter(users__in=[user])
+    issues = Issue.objects.filter(assignee__in=[user])
+
+    task_serializer = TaskSerializer(tasks, many=True)
+
+    project_serializer = ProjectSerializer(projects, many=True)
+    subproject_serializer = SubProjectSerializer(subprojects, many=True)
+    issue_serializer = IssueSerializer(issues, many=True)
+
+    return Response(
+        {
+            "user": serializer.data,
+            "tasks": task_serializer.data,
+            "projects": project_serializer.data,
+            "subprojects": subproject_serializer.data,
+            "issues": issue_serializer.data,
+        }
+    )
+
+
 @api_view(["POST"])
 @permission_classes([AllowAny])
 def signup(request):
@@ -122,24 +141,6 @@ def signup(request):
 @api_view(["GET"])
 def test_token(request):
     return Response("passed for {}".format(request.user.email))
-
-
-class LogList(generics.ListCreateAPIView):
-    queryset = Log.tasklogobjects.all()
-    serializer_class = LogSerializer
-
-
-class LogDetail(generics.RetrieveUpdateAPIView):
-    queryset = Log.tasklogobjects.all()
-
-    def get_serializer_class(self):
-        if self.request.method == "PUT":
-            return LogUpdateSerializer
-        return LogSerializer
-
-    def update(self, request, *args, **kwargs):
-        instance = self.get_object()
-        return super().update(request, *args, **kwargs)
 
 
 class ProjectList(generics.ListCreateAPIView):
@@ -269,14 +270,9 @@ class ClientList(viewsets.ModelViewSet):
     serializer_class = ClientSerializer
 
 
-class CheckInList(generics.ListCreateAPIView):
-    queryset = CheckIn.objects.all()
-    serializer_class = CheckInSerializer
-
-
-class CheckInDetail(generics.RetrieveAPIView):
-    queryset = CheckIn.objects.all()
-    serializer_class = CheckInSerializer
+class TaskList(generics.ListCreateAPIView):
+    queryset = Task.objects.all()
+    serializer_class = TaskSerializer
 
 
 class TicketList(generics.ListCreateAPIView):

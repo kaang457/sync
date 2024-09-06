@@ -7,14 +7,6 @@ from django.utils.translation import gettext_lazy as _
 from django.conf import settings
 
 
-class Image(models.Model):
-    description = models.CharField(max_length=255)
-    image = models.ImageField(upload_to="images/")
-
-    def __str__(self):
-        return self.description
-
-
 class User(AbstractUser):
     ROLE_CHOICES = [
         ("Admin", "admin"),
@@ -86,7 +78,8 @@ class Task(models.Model):
     created_by = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="created_by"
     )
-    man_hours = models.FloatField(default=0.0)
+    man_hour = models.FloatField(default=0.0)
+    image = models.ImageField(null=True, blank=True, upload_to="images/")
 
 
 class Comment(models.Model):
