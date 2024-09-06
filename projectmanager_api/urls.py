@@ -14,6 +14,7 @@ router.register(r"clients", ClientList, basename="client")
 
 
 urlpatterns = [
+    path("issues", IssueList, name="issue_list"),
     path("issues/<int:id>", issue_detail, name="issue_detail"),
     path("", include(router.urls)),
     path("projects", ProjectList.as_view(), name="ProjectList"),
