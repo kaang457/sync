@@ -121,6 +121,11 @@ class Ticket(models.Model):
     type = models.CharField(max_length=50, choices=TYPE_CHOICES)
     priority = models.CharField(max_length=50, choices=PRIORITY_CHOICES)
     status = models.CharField(max_length=50, choices=STATUS_CHOICES)
+    comment = models.ForeignKey(
+        Comment, on_delete=models.CASCADE, blank=True, null=True
+    )
+    update = models.ForeignKey(Update, on_delete=models.CASCADE, blank=True, null=True)
+    created_at = models.DateTimeField(auto_now=True)
 
 
 class Issue(models.Model):

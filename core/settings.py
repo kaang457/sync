@@ -177,8 +177,8 @@ import os
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 
-MEDIA_ROOT = "/media/"
-MEDIA_URL = os.path.join(BASE_DIR, "media/")
+MEDIA_ROOT = BASE_DIR / "media/"
+MEDIA_ROOT = "/var/www/project/media/"
 
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
 # Default primary key field type
