@@ -10,12 +10,10 @@ from rest_framework.authentication import SessionAuthentication, TokenAuthentica
 from projectmanager.models import (
     Update,
     Comment,
-    Log,
     Issue,
     Project,
     SubProject,
     Client,
-    CheckIn,
     User,
     Ticket,
 )
@@ -221,7 +219,7 @@ def issue_detail(request, id):
             comment_serializer = CommentSerializer(data=data)
             if comment_serializer.is_valid():
                 comment = comment_serializer.save()
-                issue.comment = comment
+                issue.comment.add(comment)
             else:
                 return Response(
                     comment_serializer.errors, status=status.HTTP_400_BAD_REQUEST
@@ -241,7 +239,7 @@ def issue_detail(request, id):
                 old_value = update.old_value
                 new_value = update.new_value
                 issue.updated_at = update.created_at
-                issue.update = update
+                issue.update.add(update)
                 if hasattr(issue, field_name):
                     setattr(issue, field_name, new_value)
                     issue.save()
@@ -273,6 +271,22 @@ class ClientList(viewsets.ModelViewSet):
 class TaskList(generics.ListCreateAPIView):
     queryset = Task.objects.all()
     serializer_class = TaskSerializer
+
+
+@api_view(["GET", "PUT", "POST"])
+def task_detail(request, id):
+    task = get_object_or_404(Task, id=id)
+
+    if request.method == "GET":
+        serializer = TaskSerializer(task)
+        return Response(serializer.data)
+
+    elif request.method == "PUT":
+        data = request.data.copy()
+        data["description"] = task.description
+        data["content"] = task.content
+        data["due_date"] = task.due_date
+        data
 
 
 class TicketList(generics.ListCreateAPIView):

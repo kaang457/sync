@@ -94,7 +94,7 @@ class Update(models.Model):
     field = models.CharField(max_length=50)
     old_value = models.CharField(max_length=50)
     new_value = models.CharField(max_length=50)
-    created_at = models.DateTimeField(auto_now=True)
+    created_at = models.DateField(auto_now=True)
 
 
 class Ticket(models.Model):
@@ -166,54 +166,6 @@ class Issue(models.Model):
     ticket = models.ForeignKey(Ticket, on_delete=models.CASCADE, blank=True, null=True)
     convertedFromTicket = models.BooleanField(default=False)
     status = models.CharField(max_length=15, choices=options, default="open")
-    comment = models.ForeignKey(
-        Comment, on_delete=models.CASCADE, blank=True, null=True
-    )
+    comment = models.ManyToManyField(Comment, blank=True, null=True)
     updated_at = models.DateField(blank=True, null=True)
-    update = models.ForeignKey(Update, on_delete=models.CASCADE, blank=True, null=True)
-
-
-class Log(models.Model):
-    class TaskLogObjects(models.Manager):
-        def get_queryset(self):
-            return super().get_queryset().filter(status="active")
-
-    user = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="tasklogs", default=1
-    )
-    task = models.ForeignKey(Issue, on_delete=models.PROTECT, default=1)
-    options = (
-        ("billable", "Billable"),
-        ("non-billable", "Non-billable"),
-    )
-    status_choices = (
-        ("active", "Active"),
-        ("finished", "Finished"),
-    )
-    status = models.CharField(max_length=10, choices=status_choices, default="active")
-    is_billable = models.CharField(max_length=12, choices=options, default="billable")
-    start_time = models.TimeField(auto_now_add=True)
-    end_time = models.TimeField(auto_now=True)
-    total_time = models.FloatField(default=0.0)
-
-    active = models.BooleanField(default=True)
-    read_only = models.BooleanField(default=False)
-    terminate = models.BooleanField(default=False)
-    objects = models.Manager()
-    tasklogobjects = TaskLogObjects()
-
-    class Meta:
-        ordering = ["start_time"]
-
-    def __str__(self):
-        return f"TaskLog for {self.task.description} starting at {self.start_time}"
-
-
-class CheckIn(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="checkin")
-    date = models.DateField()
-    options = (
-        ("Remote", "remote"),
-        ("On-site", "on-site"),
-    )
-    models.CharField(choices=options, max_length=20, default="on-site")
+    update = models.ManyToManyField(Update, blank=True, null=True)

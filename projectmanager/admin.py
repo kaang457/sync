@@ -4,7 +4,6 @@ from .models import *
 
 
 admin.site.register(Project)
-admin.site.register(Log)
 admin.site.register(Issue)
 admin.site.register(Client)
 admin.site.register(User, UserAdmin)

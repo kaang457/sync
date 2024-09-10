@@ -3,11 +3,9 @@ from projectmanager.models import (
     Update,
     Comment,
     Issue,
-    Log,
     Project,
     SubProject,
     Client,
-    CheckIn,
     User,
     Ticket,
     Task,
@@ -94,8 +92,8 @@ class UpdateSerializer(serializers.ModelSerializer):
 
 
 class IssueSerializer(serializers.ModelSerializer):
-    comment = CommentSerializer(read_only=True)
-    update = UpdateSerializer(read_only=True)
+    comment = CommentSerializer(read_only=True, many=True)
+    update = UpdateSerializer(read_only=True, many=True)
     assignee = serializers.PrimaryKeyRelatedField(
         queryset=User.objects.all(), many=True
     )
