@@ -18,6 +18,7 @@ urlpatterns = [
     path("issues/<int:id>", issue_detail, name="issue_detail"),
     path("", include(router.urls)),
     path("projects", ProjectList.as_view(), name="ProjectList"),
+    path("projects/<int:id>", project_detail, name="project_detail"),
     re_path("signup", signup),
     re_path("test_token", test_token),
     path("tasks", TaskList.as_view(), name="tasks"),

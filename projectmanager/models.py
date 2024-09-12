@@ -8,15 +8,14 @@ from django.conf import settings
 
 
 class User(AbstractUser):
-    ROLE_CHOICES = [
-        ("Admin", "admin"),
-        ("User", "user"),
-        ("Guest", "guest"),
-    ]
+    ROLE_CHOICES = ["admin", "user", "guest"]
 
     name = models.CharField(max_length=255)
     email = models.EmailField(unique=True)
-    roles = models.CharField(max_length=5, choices=ROLE_CHOICES, default="User")
+    roles = models.JSONField(default=list)
+
+    def __str__(self):
+        return self.name
 
     groups = models.ManyToManyField(
         Group, related_name="projectmanager_user_groups", blank=True
@@ -24,13 +23,10 @@ class User(AbstractUser):
     user_permissions = models.ManyToManyField(
         Permission, related_name="projectmanager_user_permissions", blank=True
     )
-
+    username = models.CharField(max_length=255, unique=True, null=True, blank=True)
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = ["name", "roles"]
     objects = CustomUserManager()
-
-    def __str__(self):
-        return self.email
 
 
 class Client(models.Model):
@@ -166,6 +162,6 @@ class Issue(models.Model):
     ticket = models.ForeignKey(Ticket, on_delete=models.CASCADE, blank=True, null=True)
     convertedFromTicket = models.BooleanField(default=False)
     status = models.CharField(max_length=15, choices=options, default="open")
-    comment = models.ManyToManyField(Comment, blank=True, null=True)
+    comment = models.ManyToManyField(Comment, blank=True)
     updated_at = models.DateField(blank=True, null=True)
-    update = models.ManyToManyField(Update, blank=True, null=True)
+    update = models.ManyToManyField(Update, blank=True)

@@ -93,7 +93,7 @@ class CustomTokenObtainPairView(TokenObtainPairView):
 @api_view(["GET"])
 def profile(request, id):
     user = User.objects.all().get(id=id)
-    serializer = BasicUserSerializer(user)
+    serializer = UserSerializer(user)
     tasks = Task.objects.filter(assignee__in=[user])
     projects = Project.objects.filter(users__in=[user])
     subprojects = SubProject.objects.filter(users__in=[user])
@@ -146,6 +146,28 @@ class ProjectList(generics.ListCreateAPIView):
     serializer_class = ProjectSerializer
 
 
+@api_view(["GET", "PUT", "POST"])
+def project_detail(request, id):
+    project = get_object_or_404(Project, id=id)
+
+    if request.method == "GET":
+        serializer = ProjectSerializer(project)
+        return Response(serializer.data)
+
+    elif request.method == "PUT":
+        data = request.data.copy()
+        data["createdAt"] = project.createdAt
+        data["owner"] = project.owner
+        data["users"] = project.users.all()
+        project_serializer = ProjectSerializer(data=data)
+        if project_serializer.is_valid():
+            project = project_serializer.save()
+            return Response(
+                ProjectSerializer(project).data, status=status.HTTP_201_CREATED
+            )
+        return Response(project_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
 class SubProjectList(generics.ListCreateAPIView):
     queryset = SubProject.objects.all()
     serializer_class = SubProjectSerializer
@@ -163,12 +185,7 @@ class CommentView(generics.ListCreateAPIView):
 
 class UserList(generics.ListAPIView):
     queryset = User.objects.all()
-    serializer_class = UserSerializer
-
-    def list(self, request):
-        queryset = self.get_queryset()
-        serializer = UserSerializer(queryset, many=True)
-        return Response(serializer.data)
+    serializer_class = BasicUserSerializer
 
 
 @api_view(["POST"])

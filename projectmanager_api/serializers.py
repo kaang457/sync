@@ -16,67 +16,36 @@ from rest_framework.exceptions import PermissionDenied
 from rest_framework.permissions import BasePermission
 from django.utils.text import slugify
 from django.core.exceptions import ObjectDoesNotExist
-
-
-class UserSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = User
-        fields = ["id", "username", "password", "email", "name", "roles"]
-
-    def create(self, validated_data):
-        user = User.objects.create_user(
-            username=validated_data["username"],
-            email=validated_data["email"],
-            password=validated_data["password"],
-            name=validated_data["name"],
-            roles=validated_data["roles"],
-        )
-        return user
+import uuid
 
 
 class BasicUserSerializer(serializers.ModelSerializer):
+
     class Meta:
         model = User
-        fields = ["name", "email"]
+        fields = ["id", "name", "email", "roles"]
 
-    def update(self, instance, validated_data):
-        time_format = "%H:%M:%S.%f"
 
-        if instance.read_only:
-            raise serializers.ValidationError(
-                "This item is read-only and cannot be modified."
-            )
+class UserSerializer(serializers.ModelSerializer):
+    roles = serializers.JSONField(default=list)
 
-        if "terminate" in validated_data and validated_data["terminate"]:
+    class Meta:
+        model = User
+        fields = ["name", "email", "roles", "password"]
 
-            instance.read_only = True
-            instance.active = False
-            instance.terminate = True
-            instance.save()
-            return instance
+    def create(self, validated_data):
+        validated_data["username"] = (
+            validated_data.get("email", "") + str(uuid.uuid4())[:8]
+        )
+        user = User.objects.create_user(
+            username=validated_data["username"],
+            email=validated_data["email"],
+            name=validated_data["name"],
+            roles=validated_data["roles"],
+            password=validated_data["password"],
+        )
 
-        if instance.terminate:
-            raise serializers.ValidationError(
-                "This item is terminated and cannot be modified."
-            )
-
-        if instance.active:
-            instance.active = False
-            end_time = datetime.now().strftime(time_format)
-            start_time = datetime.strptime(str(instance.start_time), time_format)
-            end_time = datetime.strptime(end_time, time_format)
-            total_time = end_time - start_time
-            total_time = total_time.total_seconds()
-            instance.total_time += total_time
-
-        elif not instance.active and not instance.terminate:
-            instance.active = True
-            instance.start_time = datetime.now().strftime(time_format)
-
-        instance = super().update(instance, validated_data)
-        instance.save()
-
-        return instance
+        return user
 
 
 class CommentSerializer(serializers.ModelSerializer):
