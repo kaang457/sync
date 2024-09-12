@@ -61,8 +61,8 @@ class UpdateSerializer(serializers.ModelSerializer):
 
 
 class IssueSerializer(serializers.ModelSerializer):
-    comment = CommentSerializer(read_only=True, many=True)
-    update = UpdateSerializer(read_only=True, many=True)
+    comments = CommentSerializer(read_only=True, many=True)
+    updates = UpdateSerializer(read_only=True, many=True)
     assignee = serializers.PrimaryKeyRelatedField(
         queryset=User.objects.all(), many=True
     )
