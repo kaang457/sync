@@ -109,18 +109,15 @@ class Ticket(models.Model):
         ("problem", "Problem"),
     ]
     STATUS_CHOICES = [
-        ("accepted", "accepted"),
-        ("waiting", "waiting"),
-        ("resolved", "resolved"),
+        ("open", "open"),
+        ("closed", "closed"),
     ]
     accepted = models.BooleanField(default=False)
     type = models.CharField(max_length=50, choices=TYPE_CHOICES)
     priority = models.CharField(max_length=50, choices=PRIORITY_CHOICES)
     status = models.CharField(max_length=50, choices=STATUS_CHOICES)
-    comment = models.ForeignKey(
-        Comment, on_delete=models.CASCADE, blank=True, null=True
-    )
-    update = models.ForeignKey(Update, on_delete=models.CASCADE, blank=True, null=True)
+    comments = models.ManyToManyField(Comment, blank=True)
+    updates = models.ManyToManyField(Update, blank=True)
     created_at = models.DateTimeField(auto_now=True)
 
 
@@ -162,6 +159,6 @@ class Issue(models.Model):
     ticket = models.ForeignKey(Ticket, on_delete=models.CASCADE, blank=True, null=True)
     convertedFromTicket = models.BooleanField(default=False)
     status = models.CharField(max_length=15, choices=options, default="open")
-    comment = models.ManyToManyField(Comment, blank=True)
+    comments = models.ManyToManyField(Comment, blank=True)
     updated_at = models.DateField(blank=True, null=True)
-    update = models.ManyToManyField(Update, blank=True)
+    updates = models.ManyToManyField(Update, blank=True)
