@@ -66,10 +66,20 @@ class IssueSerializer(serializers.ModelSerializer):
     assignee = serializers.PrimaryKeyRelatedField(
         queryset=User.objects.all(), many=True
     )
+    ticket = serializers.PrimaryKeyRelatedField(
+        queryset=Ticket.objects.all(), many=False, required=False, allow_null=True
+    )
+    created_by = UserSerializer(User, read_only=True)
 
     class Meta:
         model = Issue
         fields = "__all__"
+
+    def to_internal_value(self, data):
+
+        if "ticket" in data and data["ticket"] == "":
+            data["ticket"] = None
+        return super().to_internal_value(data)
 
     def to_representation(self, instance):
 
@@ -158,3 +168,5 @@ class TaskSerializer(serializers.ModelSerializer):
     class Meta:
         model = Task
         fields = "__all__"
+
+    created_by = UserSerializer(User, read_only=True)

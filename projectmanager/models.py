@@ -7,12 +7,21 @@ from django.utils.translation import gettext_lazy as _
 from django.conf import settings
 
 
+class Image(models.Model):
+    image = models.ImageField(upload_to="images/")
+    uploaded_at = models.DateTimeField(auto_now_add=True)
+
+
 class User(AbstractUser):
-    ROLE_CHOICES = ["admin", "user", "guest"]
+    ROLE_CHOICES = [
+        ("admin", "Admin"),
+        ("user", "User"),
+        ("guest", "Guest"),
+    ]
 
     name = models.CharField(max_length=255)
     email = models.EmailField(unique=True)
-    roles = models.JSONField(default=list)
+    roles = models.CharField(max_length=255, choices=ROLE_CHOICES)
 
     def __str__(self):
         return self.name
@@ -23,6 +32,7 @@ class User(AbstractUser):
     user_permissions = models.ManyToManyField(
         Permission, related_name="projectmanager_user_permissions", blank=True
     )
+
     username = models.CharField(max_length=255, unique=True, null=True, blank=True)
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = ["name", "roles"]
@@ -46,6 +56,7 @@ class Project(models.Model):
         related_name="created_project",
     )
     users = models.ManyToManyField(User)
+    client = models.ForeignKey(Client, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
@@ -72,9 +83,10 @@ class Task(models.Model):
     updated_at = models.DateField(blank=True, null=True)
     created_at = models.DateField(auto_now=True)
     created_by = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="created_by"
+        User, on_delete=models.CASCADE, related_name="created_by", null=True
     )
     man_hour = models.FloatField(default=0.0)
+    completed_hour = models.FloatField(default=0.0)
     image = models.ImageField(null=True, blank=True, upload_to="images/")
 
 

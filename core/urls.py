@@ -1,8 +1,12 @@
 from django.contrib import admin
 from django.urls import path, include, re_path
-from projectmanager_api.views import CustomTokenObtainPairView, CustomTokenRefreshView
+from projectmanager_api.views import (
+    CustomTokenObtainPairView,
+    CustomTokenRefreshView,
+    profile,
+)
 from . import settings
-from django.conf.urls.static import static 
+from django.conf.urls.static import static
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -12,7 +16,7 @@ urlpatterns = [
         "api/auth/login", CustomTokenObtainPairView.as_view(), name="token_obtain_pair"
     ),
     path("api/auth/refresh", CustomTokenRefreshView.as_view(), name="token_refresh"),
-    
+    path("api/auth/me", profile, name="profile"),
 ]
 
-urlpatterns+= static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

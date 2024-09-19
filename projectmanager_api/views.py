@@ -91,8 +91,9 @@ class CustomTokenObtainPairView(TokenObtainPairView):
 
 
 @api_view(["GET"])
-def profile(request, id):
-    user = User.objects.all().get(id=id)
+def profile(request):
+    user = request.user
+
     serializer = UserSerializer(user)
     tasks = Task.objects.filter(assignee__in=[user])
     projects = Project.objects.filter(users__in=[user])
@@ -208,15 +209,29 @@ class IssueList(generics.ListCreateAPIView):
     serializer_class = IssueSerializer
 
     def create(self, request, *args, **kwargs):
+
         data = request.data.copy()
-        if data["ticket"] != None:
-            ticket = Ticket.objects.get(id=data["ticket"])
-            data["convertedFromTicket"] = True
-            data["status"] = "open"
+
+        ticket_id = data.get("ticket")
+        if ticket_id:
+            try:
+                ticket = Ticket.objects.get(id=ticket_id)
+                data["convertedFromTicket"] = True
+                data["status"] = "open"
+            except Ticket.DoesNotExist:
+                return Response(
+                    {"error": "Ticket not found."}, status=status.HTTP_404_NOT_FOUND
+                )
+        else:
+
+            data["convertedFromTicket"] = False
+
         serializer = IssueSerializer(data=data)
+
         if serializer.is_valid():
             issue = serializer.save()
             return Response(IssueSerializer(issue).data, status=status.HTTP_201_CREATED)
+
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
@@ -227,8 +242,7 @@ def issue_detail(request, id):
     if request.method == "GET":
         serializer = IssueSerializer(issue)
         return Response(serializer.data)
-
-    elif request.method == "PUT":
+    elif request.method == "POST":
         data = request.data.copy()
         if data["type"] == "comment":
             data.pop("type")
@@ -241,25 +255,6 @@ def issue_detail(request, id):
                 return Response(
                     comment_serializer.errors, status=status.HTTP_400_BAD_REQUEST
                 )
-
-        elif data["type"] == "update":
-            data.pop("type")
-            data["issue"] = issue
-            if hasattr(issue, data["field"]):
-                old_value = getattr(issue, data["field"])
-                data["old_value"] = old_value
-
-            update_serializer = UpdateSerializer(data=data)
-            if update_serializer.is_valid():
-                update = update_serializer.save()
-                field_name = update.field
-                old_value = update.old_value
-                new_value = update.new_value
-                issue.updated_at = update.created_at
-                issue.update.add(update)
-                if hasattr(issue, field_name):
-                    setattr(issue, field_name, new_value)
-                    issue.save()
         elif data["type"] == "task":
             data.pop("type")
             data["issue"] = issue.id
@@ -277,6 +272,24 @@ def issue_detail(request, id):
                 return Response(
                     task_serializer.errors, status=status.HTTP_400_BAD_REQUEST
                 )
+    elif request.method == "PUT":
+        data["issue"] = issue
+        if hasattr(issue, data["field"]):
+            old_value = getattr(issue, data["field"])
+            data["old_value"] = old_value
+
+        update_serializer = UpdateSerializer(data=data)
+        if update_serializer.is_valid():
+            update = update_serializer.save()
+            field_name = update.field
+            old_value = update.old_value
+            new_value = update.new_value
+            issue.updated_at = update.created_at
+            issue.update.add(update)
+            if hasattr(issue, field_name):
+                setattr(issue, field_name, new_value)
+                issue.save()
+
         return Response(IssueSerializer(issue).data, status=status.HTTP_200_OK)
 
 
@@ -290,10 +303,10 @@ class TaskList(generics.ListCreateAPIView):
     serializer_class = TaskSerializer
 
 
-@api_view(["GET", "PUT", "POST"])
+@api_view(["GET", "PUT", "POST", "DELETE"])
 def task_detail(request, id):
     task = get_object_or_404(Task, id=id)
-
+    task["user"] = request.user
     if request.method == "GET":
         serializer = TaskSerializer(task)
         return Response(serializer.data)
@@ -304,6 +317,9 @@ def task_detail(request, id):
         data["content"] = task.content
         data["due_date"] = task.due_date
         data
+    elif request.method == "DELETE":
+        task.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
 
 
 class TicketList(generics.ListCreateAPIView):
