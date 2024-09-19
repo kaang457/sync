@@ -174,3 +174,4 @@ class TaskSerializer(serializers.ModelSerializer):
         fields = "__all__"
 
     created_by = UserSerializer(User, read_only=True)
+    assignee = BasicUserSerializer(User, many=True)
