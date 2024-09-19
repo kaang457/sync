@@ -2,3 +2,5 @@
 db.sqlite3
 /projectmanager/migrations
 django_requests.log
+/media
+/static
