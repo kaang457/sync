@@ -5,6 +5,7 @@ from rest_framework.decorators import (
     authentication_classes,
     permission_classes,
 )
+from django.http import JsonResponse
 from projectmanager_api.serializers import UserSerializer
 from rest_framework.authentication import SessionAuthentication, TokenAuthentication
 from projectmanager.models import (
@@ -249,8 +250,11 @@ def issue_detail(request, id):
             data["issue"] = issue
             comment_serializer = CommentSerializer(data=data)
             if comment_serializer.is_valid():
-                comment = comment_serializer.save()
-                issue.comment.add(comment)
+                comment = comment_serializer.save(created_by=request.user)
+                issue.comments.add(comment)
+                return Response(
+                    CommentSerializer(comment).data, status=status.HTTP_201_CREATED
+                )
             else:
                 return Response(
                     comment_serializer.errors, status=status.HTTP_400_BAD_REQUEST
@@ -264,7 +268,7 @@ def issue_detail(request, id):
 
             task_serializer = TaskSerializer(data=data)
             if task_serializer.is_valid():
-                task = task_serializer.save()
+                task = task_serializer.save(created_by=request.user)
                 return Response(
                     TaskSerializer(task).data, status=status.HTTP_201_CREATED
                 )
@@ -273,22 +277,35 @@ def issue_detail(request, id):
                     task_serializer.errors, status=status.HTTP_400_BAD_REQUEST
                 )
     elif request.method == "PUT":
-        data["issue"] = issue
-        if hasattr(issue, data["field"]):
-            old_value = getattr(issue, data["field"])
-            data["old_value"] = old_value
+        payload = request.data.copy()
 
-        update_serializer = UpdateSerializer(data=data)
-        if update_serializer.is_valid():
-            update = update_serializer.save()
-            field_name = update.field
-            old_value = update.old_value
-            new_value = update.new_value
-            issue.updated_at = update.created_at
-            issue.update.add(update)
-            if hasattr(issue, field_name):
-                setattr(issue, field_name, new_value)
-                issue.save()
+        if len(payload) != 1:
+            return JsonResponse(
+                {"error": "Expected a single field-value pair"}, status=400
+            )
+
+        for field, value in payload.items():
+            old_value = getattr(issue, field, None)
+
+            data = {"field": field, "old_value": old_value, "new_value": value}
+            update_serializer = UpdateSerializer(data=data)
+
+            if update_serializer.is_valid():
+                update = update_serializer.save()
+                field_name = update.field
+                old_value = update.old_value
+                new_value = update.new_value
+
+                issue.updated_at = update.created_at
+                issue.updates.add(update)
+
+                if hasattr(issue, field_name):
+                    setattr(issue, field_name, new_value)
+                    issue.save()
+
+                return JsonResponse({"status": "success"})
+            else:
+                return JsonResponse(update_serializer.errors, status=400)
 
         return Response(IssueSerializer(issue).data, status=status.HTTP_200_OK)
 

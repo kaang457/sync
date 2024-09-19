@@ -23,7 +23,7 @@ class BasicUserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ["name", "email"]
+        fields = ["name", "email", "roles", "id"]
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -31,7 +31,9 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ["name", "email", "roles", "password"]
+        fields = ["name", "email", "roles", "password", "id"]
+        read_only_fields = ["id"]
+        extra_kwargs = {"password": {"write_only": True}}
 
     def create(self, validated_data):
         validated_data["username"] = (
@@ -52,6 +54,8 @@ class CommentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Comment
         fields = "__all__"
+
+    created_by = UserSerializer(User, read_only=True)
 
 
 class UpdateSerializer(serializers.ModelSerializer):

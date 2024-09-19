@@ -73,9 +73,6 @@ class SubProject(models.Model):
 
 class Task(models.Model):
     description = models.CharField(max_length=255)
-    subproject = models.ForeignKey(
-        SubProject, on_delete=models.CASCADE, null=True, blank=True
-    )
     issue = models.ForeignKey("Issue", on_delete=models.CASCADE)
     content = models.CharField(max_length=255)
     assignee = models.ManyToManyField(User)
