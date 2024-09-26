@@ -261,7 +261,7 @@ def issue_detail(request, id):
                 )
         elif data["type"] == "task":
             data.pop("type")
-            data["issue"] = issue.id
+            data["issue"] = issue.auto_id
             data["user"] = request.user
             data["subproject"] = issue.subproject
             data["project"] = issue.project
@@ -323,17 +323,24 @@ class TaskList(generics.ListCreateAPIView):
 @api_view(["GET", "PUT", "POST", "DELETE"])
 def task_detail(request, id):
     task = get_object_or_404(Task, id=id)
-    task["user"] = request.user
+
+    task.user = request.user
+
     if request.method == "GET":
         serializer = TaskSerializer(task)
         return Response(serializer.data)
 
     elif request.method == "PUT":
         data = request.data.copy()
-        data["description"] = task.description
-        data["content"] = task.content
-        data["due_date"] = task.due_date
-        data
+
+        task.description = data.get("description", task.description)
+        task.content = data.get("content", task.content)
+        task.due_date = data.get("due_date", task.due_date)
+        task.save()
+
+        serializer = TaskSerializer(task)
+        return Response(serializer.data)
+
     elif request.method == "DELETE":
         task.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)

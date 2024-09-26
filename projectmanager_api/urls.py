@@ -22,6 +22,7 @@ urlpatterns = [
     re_path("signup", signup),
     re_path("test_token", test_token),
     path("tasks", TaskList.as_view(), name="tasks"),
+    path("tasks/<int:id>", task_detail, name="task_detail"),
     path("subprojects", SubProjectList.as_view(), name="subproject"),
     path("users", UserList.as_view(), name="users"),
     path("users/<int:id>", profile, name="profile"),

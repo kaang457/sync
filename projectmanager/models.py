@@ -5,6 +5,22 @@ from .managers import CustomUserManager
 from django.utils.text import slugify
 from django.utils.translation import gettext_lazy as _
 from django.conf import settings
+import uuid
+
+MODEL_PREFIX_LENGTH = 3
+
+
+class BaseModel(models.Model):
+    id = models.CharField(
+        primary_key=True, max_length=255, editable=True, default=uuid.uuid4
+    )
+
+    def save(self, *args, **kwargs):
+        self.id = self.__class__.__name__[:MODEL_PREFIX_LENGTH].upper() + str(self.id)
+        super().save(*args, **kwargs)
+
+    class Meta:
+        abstract = True
 
 
 class Image(models.Model):
@@ -36,17 +52,18 @@ class User(AbstractUser):
     username = models.CharField(max_length=255, unique=True, null=True, blank=True)
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = ["name", "roles"]
+
     objects = CustomUserManager()
 
 
-class Client(models.Model):
+class Client(BaseModel):
     name = models.CharField(max_length=100)
 
     def __str__(self):
         return self.name
 
 
-class Project(models.Model):
+class Project(BaseModel):
     name = models.CharField(max_length=100)
     createdAt = models.DateField(auto_now=True)
     description = models.CharField(max_length=255)
@@ -62,7 +79,7 @@ class Project(models.Model):
         return self.name
 
 
-class SubProject(models.Model):
+class SubProject(BaseModel):
     name = models.CharField(max_length=255)
     description = models.CharField(max_length=255)
     users = models.ManyToManyField(User)
@@ -71,7 +88,7 @@ class SubProject(models.Model):
     createdAt = models.DateField(auto_now=True)
 
 
-class Task(models.Model):
+class Task(BaseModel):
     description = models.CharField(max_length=255)
     issue = models.ForeignKey("Issue", on_delete=models.CASCADE)
     content = models.CharField(max_length=255)
@@ -87,7 +104,7 @@ class Task(models.Model):
     image = models.ImageField(null=True, blank=True, upload_to="images/")
 
 
-class Comment(models.Model):
+class Comment(BaseModel):
     content = models.TextField()
     created_at = models.DateTimeField(auto_now=True)
     created_by = models.ForeignKey(
@@ -95,14 +112,14 @@ class Comment(models.Model):
     )
 
 
-class Update(models.Model):
+class Update(BaseModel):
     field = models.CharField(max_length=50)
     old_value = models.CharField(max_length=50)
     new_value = models.CharField(max_length=50)
     created_at = models.DateField(auto_now=True)
 
 
-class Ticket(models.Model):
+class Ticket(BaseModel):
     description = models.CharField(max_length=255)
     content = models.CharField(max_length=255, default="", blank=True, null=True)
     PRIORITY_CHOICES = [
@@ -130,7 +147,7 @@ class Ticket(models.Model):
     created_at = models.DateTimeField(auto_now=True)
 
 
-class Issue(models.Model):
+class Issue(BaseModel):
     options = (
         ("open", "Open"),
         ("in_progress", "In Progress"),
