@@ -29,6 +29,14 @@ class Image(models.Model):
 
 
 class User(AbstractUser):
+    id = models.CharField(
+        primary_key=True, max_length=255, editable=True, default=uuid.uuid4
+    )
+
+    def save(self, *args, **kwargs):
+        self.id = self.__class__.__name__[:MODEL_PREFIX_LENGTH].upper() + str(self.id)
+        super().save(*args, **kwargs)
+
     ROLE_CHOICES = [
         ("admin", "Admin"),
         ("user", "User"),
