@@ -125,11 +125,16 @@ def signup(request):
 
     if serializer.is_valid():
         try:
+            print("asdasd1")
             user = serializer.save()
+            print("asdasd2")
             user.set_password(request.data["password"])
+            print("asdasd3")
             user.save()
+            print("asdasd4")
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         except Exception as e:
+            print("asdasd")
             return Response(
                 {"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR
             )

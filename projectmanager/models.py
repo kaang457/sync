@@ -35,7 +35,6 @@ class User(AbstractUser):
 
     def save(self, *args, **kwargs):
         self.id = self.__class__.__name__[:MODEL_PREFIX_LENGTH].upper() + str(self.id)
-        super().save(*args, **kwargs)
 
     ROLE_CHOICES = [
         ("admin", "Admin"),
