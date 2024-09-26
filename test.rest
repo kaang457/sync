@@ -9,6 +9,17 @@ Content-Type: application/json
 }
 
 ###
+POST http://178.251.45.13:1080/api/signup/
+Content-Type: application/json
+
+{
+    "password": "test",
+    "email": "test@test.com",
+    "name": "Test User",
+    "roles": "admin"
+}
+
+###
 POST http://127.0.0.1:8000/api/auth/login/
 Content-Type: application/json
 
