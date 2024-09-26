@@ -2,7 +2,7 @@ POST http://127.0.0.1:8000/api/signup/
 Content-Type: application/json
 
 {
-    "password": "test",
+    "password": "test2",
     "email": "test2@test.com",
     "name": "Test User 2",
     "roles": "admin"
@@ -14,8 +14,8 @@ Content-Type: application/json
 
 {
     "password": "test",
-    "email": "test@test.com",
-    "name": "Test User",
+    "email": "test2@test.com",
+    "name": "Test User 2",
     "roles": "admin"
 }
 

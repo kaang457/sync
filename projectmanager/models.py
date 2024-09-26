@@ -57,8 +57,7 @@ class User(AbstractUser):
         Permission, related_name="projectmanager_user_permissions", blank=True
     )
 
-    USERNAME_FIELD = "email"
-    REQUIRED_FIELDS = ["name", "roles"]
+    REQUIRED_FIELDS = ["name", "roles", "email"]
 
     objects = CustomUserManager()
 

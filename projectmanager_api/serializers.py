@@ -27,11 +27,10 @@ class BasicUserSerializer(serializers.ModelSerializer):
 
 
 class UserSerializer(serializers.ModelSerializer):
-    roles = serializers.JSONField(default=list)
 
     class Meta:
         model = User
-        fields = ["name", "email", "roles", "password", "id"]
+        fields = ["name", "roles", "email", "password", "id"]
         read_only_fields = ["id"]
         extra_kwargs = {"password": {"write_only": True}}
 
@@ -46,7 +45,6 @@ class UserSerializer(serializers.ModelSerializer):
             roles=validated_data["roles"],
             password=validated_data["password"],
         )
-
         return user
 
 
