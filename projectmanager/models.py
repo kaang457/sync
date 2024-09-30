@@ -89,7 +89,6 @@ class SubProject(BaseModel):
     description = models.CharField(max_length=255)
     users = models.ManyToManyField(User)
     projectId = models.ForeignKey(Project, on_delete=models.CASCADE)
-    owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name="owner")
 
 
 class Task(BaseModel):

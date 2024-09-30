@@ -105,7 +105,7 @@ class ClientSerializer(serializers.ModelSerializer):
 
 
 class SubProjectSerializer(serializers.ModelSerializer):
-    owner = serializers.PrimaryKeyRelatedField(queryset=User.objects.all(), many=False)
+
     users = serializers.PrimaryKeyRelatedField(queryset=User.objects.all(), many=True)
     projectId = serializers.PrimaryKeyRelatedField(queryset=Project.objects.all())
     createdAt = serializers.DateField(read_only=True)
@@ -119,7 +119,7 @@ class SubProjectSerializer(serializers.ModelSerializer):
         representation = super().to_representation(instance)
 
         representation["users"] = BasicUserSerializer(instance.users, many=True).data
-        representation["owner"] = BasicUserSerializer(instance.owner, many=False).data
+
         return representation
 
 
