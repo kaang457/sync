@@ -9,14 +9,11 @@ from rest_framework_simplejwt.views import (
 
 app_name = "projectmanager_api"
 
-router = routers.DefaultRouter()
-router.register(r"clients", ClientList, basename="client")
-
 
 urlpatterns = [
+    path("clients", ClientList.as_view({"get": "list"}), name="client_list"),
     path("issues", IssueList.as_view(), name="issue_list"),
     path("issues/<int:id>", issue_detail, name="issue_detail"),
-    path("", include(router.urls)),
     path("projects", ProjectList.as_view(), name="ProjectList"),
     path("projects/<int:id>", project_detail, name="project_detail"),
     re_path("signup", signup),

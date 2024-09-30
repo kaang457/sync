@@ -35,11 +35,7 @@ class UserSerializer(serializers.ModelSerializer):
         extra_kwargs = {"password": {"write_only": True}}
 
     def create(self, validated_data):
-        validated_data["username"] = (
-            validated_data.get("email", "") + str(uuid.uuid4())[:8]
-        )
         user = User.objects.create_user(
-            username=validated_data["username"],
             email=validated_data["email"],
             name=validated_data["name"],
             roles=validated_data["roles"],
@@ -142,7 +138,9 @@ class ProjectSerializer(serializers.ModelSerializer):
     def to_representation(self, instance):
 
         representation = super().to_representation(instance)
-
+        representation["client"] = (
+            Client.objects.filter(id=instance.client.id).first().name
+        )
         representation["users"] = BasicUserSerializer(instance.users, many=True).data
         representation["owner"] = BasicUserSerializer(instance.owner, many=False).data
         return representation
@@ -172,4 +170,3 @@ class TaskSerializer(serializers.ModelSerializer):
         fields = "__all__"
 
     created_by = UserSerializer(User, read_only=True)
-    assignee = BasicUserSerializer(User, many=True)

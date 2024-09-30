@@ -14,6 +14,7 @@ class BaseModel(models.Model):
     id = models.CharField(
         primary_key=True, max_length=255, editable=True, default=uuid.uuid4
     )
+    created_at = models.DateTimeField(auto_now=True)
 
     def save(self, *args, **kwargs):
         self.id = self.__class__.__name__[:MODEL_PREFIX_LENGTH].upper() + str(self.id)
@@ -25,7 +26,7 @@ class BaseModel(models.Model):
 
 class Image(models.Model):
     image = models.ImageField(upload_to="images/")
-    uploaded_at = models.DateTimeField(auto_now_add=True)
+    uploaded_at = models.DateTimeField(auto_now=True)
 
 
 class User(AbstractUser):
@@ -57,8 +58,8 @@ class User(AbstractUser):
         Permission, related_name="projectmanager_user_permissions", blank=True
     )
 
-    REQUIRED_FIELDS = ["name", "roles", "email"]
-
+    REQUIRED_FIELDS = ["name", "roles"]
+    USERNAME_FIELD = "email"
     objects = CustomUserManager()
 
 
@@ -71,7 +72,6 @@ class Client(BaseModel):
 
 class Project(BaseModel):
     name = models.CharField(max_length=100)
-    createdAt = models.DateField(auto_now=True)
     description = models.CharField(max_length=255)
     owner = models.ForeignKey(
         User,
@@ -91,7 +91,6 @@ class SubProject(BaseModel):
     users = models.ManyToManyField(User)
     projectId = models.ForeignKey(Project, on_delete=models.CASCADE)
     owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name="owner")
-    createdAt = models.DateField(auto_now=True)
 
 
 class Task(BaseModel):
@@ -101,7 +100,6 @@ class Task(BaseModel):
     assignee = models.ManyToManyField(User)
     due_date = models.DateField()
     updated_at = models.DateField(blank=True, null=True)
-    created_at = models.DateField(auto_now=True)
     created_by = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="created_by", null=True
     )
@@ -112,7 +110,6 @@ class Task(BaseModel):
 
 class Comment(BaseModel):
     content = models.TextField()
-    created_at = models.DateTimeField(auto_now=True)
     created_by = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="comments"
     )
@@ -122,7 +119,6 @@ class Update(BaseModel):
     field = models.CharField(max_length=50)
     old_value = models.CharField(max_length=50)
     new_value = models.CharField(max_length=50)
-    created_at = models.DateField(auto_now=True)
 
 
 class Ticket(BaseModel):
@@ -150,7 +146,6 @@ class Ticket(BaseModel):
     status = models.CharField(max_length=50, choices=STATUS_CHOICES)
     comments = models.ManyToManyField(Comment, blank=True)
     updates = models.ManyToManyField(Update, blank=True)
-    created_at = models.DateTimeField(auto_now=True)
 
 
 class Issue(BaseModel):
@@ -187,7 +182,6 @@ class Issue(BaseModel):
     content = models.CharField(max_length=250, blank=True, null=True)
     assignee = models.ManyToManyField(User)
     description = models.CharField(max_length=250)
-    createdAt = models.DateField(auto_now=True)
     ticket = models.ForeignKey(Ticket, on_delete=models.CASCADE, blank=True, null=True)
     convertedFromTicket = models.BooleanField(default=False)
     status = models.CharField(max_length=15, choices=options, default="open")

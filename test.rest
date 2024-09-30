@@ -2,10 +2,10 @@ POST http://127.0.0.1:8000/api/signup/
 Content-Type: application/json
 
 {
-    "password": "test2",
-    "email": "test2@test.com",
-    "name": "Test User 2",
-    "roles": "admin"
+    "password": "test",
+    "email": "test7@test.com",
+    "name": "Test User 7",
+    "roles": "user"
 }
 
 ###
@@ -14,9 +14,18 @@ Content-Type: application/json
 
 {
     "password": "test",
-    "email": "test2@test.com",
-    "name": "Test User 2",
+    "email": "testx@test.com",
+    "name": "Test User x",
     "roles": "admin"
+}
+
+###
+POST http://178.251.45.13:1080/api/auth/login
+Content-Type: application/json
+
+{
+    "password": "test",
+    "email": "testx@test.com"
 }
 
 ###
