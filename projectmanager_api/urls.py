@@ -11,20 +11,24 @@ app_name = "projectmanager_api"
 
 
 urlpatterns = [
-    path("clients", ClientList.as_view({"get": "list"}), name="client_list"),
+    path(
+        "clients",
+        ClientList.as_view({"get": "list", "post": "create"}),
+        name="client_list",
+    ),
     path("issues", IssueList.as_view(), name="issue_list"),
-    path("issues/<int:id>", issue_detail, name="issue_detail"),
+    path("issues/<str:id>", issue_detail, name="issue_detail"),
     path("projects", ProjectList.as_view(), name="ProjectList"),
-    path("projects/<int:id>", project_detail, name="project_detail"),
+    path("projects/<str:id>", project_detail, name="project_detail"),
     re_path("signup", signup),
     re_path("test_token", test_token),
     path("tasks", TaskList.as_view(), name="tasks"),
-    path("tasks/<int:id>", task_detail, name="task_detail"),
+    path("tasks/<str:id>", task_detail, name="task_detail"),
     path("subprojects", SubProjectList.as_view(), name="subproject"),
     path("users", UserList.as_view(), name="users"),
-    path("users/<int:id>", profile, name="profile"),
+    path("users/<str:id>", profile, name="profile"),
     path("tickets", TicketList.as_view(), name="tickets"),
-    path("tickets/<int:id>", ticket_detail, name="ticket_detail"),
+    path("tickets/<str:id>", ticket_detail, name="ticket_detail"),
     path("comments", CommentView.as_view(), name="comments"),
     path("updates", UpdateView.as_view(), name="updates"),
 ]

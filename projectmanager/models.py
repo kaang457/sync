@@ -14,7 +14,6 @@ class BaseModel(models.Model):
     id = models.CharField(
         primary_key=True, max_length=255, editable=True, default=uuid.uuid4
     )
-    created_at = models.DateTimeField(auto_now=True)
 
     def save(self, *args, **kwargs):
         self.id = self.__class__.__name__[:MODEL_PREFIX_LENGTH].upper() + str(self.id)

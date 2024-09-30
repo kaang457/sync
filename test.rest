@@ -3,8 +3,8 @@ Content-Type: application/json
 
 {
     "password": "test",
-    "email": "test7@test.com",
-    "name": "Test User 7",
+    "email": "test2@test.com",
+    "name": "Test User 2",
     "roles": "user"
 }
 
@@ -14,8 +14,8 @@ Content-Type: application/json
 
 {
     "password": "test",
-    "email": "testx@test.com",
-    "name": "Test User x",
+    "email": "test3@test.com",
+    "name": "Test User 3",
     "roles": "admin"
 }
 
@@ -25,14 +25,15 @@ Content-Type: application/json
 
 {
     "password": "test",
-    "email": "testx@test.com"
+    "email": "test@test.com"
+
 }
 
 ###
 POST http://127.0.0.1:8000/api/auth/login/
 Content-Type: application/json
 
-{"username": "test", 
+{"email": "test@test.com", 
  "password": "test"
 }
 
