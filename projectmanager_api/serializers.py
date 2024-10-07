@@ -152,13 +152,10 @@ class ProjectSerializer(serializers.ModelSerializer):
         return SubProjectSerializer(sub_projects, many=True).data
 
 
-class BasicTicketSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Ticket
-        fields = ["description", "content"]
-
-
 class TicketSerializer(serializers.ModelSerializer):
+    comments = CommentSerializer(read_only=True, many=True)
+    updates = UpdateSerializer(read_only=True, many=True)
+
     class Meta:
         model = Ticket
         fields = "__all__"

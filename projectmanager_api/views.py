@@ -37,6 +37,7 @@ from datetime import timedelta
 from django.http import HttpRequest
 from rest_framework.renderers import BrowsableAPIRenderer, JSONRenderer
 from rest_framework.decorators import renderer_classes
+import json
 
 
 class CustomTokenRefreshView(TokenRefreshView):
@@ -260,7 +261,7 @@ def issue_detail(request, id):
                 )
         elif data["type"] == "task":
             data.pop("type")
-            data["issue"] = issue.auto_id
+            data["issue"] = issue.id
             data["user"] = request.user
             data["subproject"] = issue.subproject
             data["project"] = issue.project
@@ -319,6 +320,41 @@ class TaskList(generics.ListCreateAPIView):
     serializer_class = TaskSerializer
 
 
+@api_view(["POST"])
+def uploadImage(request):
+
+    try:
+        data = json.loads(request.data.get("json"))
+    except json.JSONDecodeError:
+        return Response(
+            {"detail": "Invalid JSON data."}, status=status.HTTP_400_BAD_REQUEST
+        )
+
+    obj_id = data.get("obj_id")
+    image = request.FILES.get("image")
+
+    if not obj_id or not image:
+        return Response(
+            {"detail": "Both obj_id and image are required."},
+            status=status.HTTP_400_BAD_REQUEST,
+        )
+
+    try:
+
+        obj = Project.objects.get(id=obj_id)
+    except ObjectDoesNotExist:
+        return Response(
+            {"detail": "Project not found."}, status=status.HTTP_404_NOT_FOUND
+        )
+
+    obj.image = image
+    obj.save()
+
+    return Response(
+        {"detail": "Image uploaded successfully."}, status=status.HTTP_200_OK
+    )
+
+
 @api_view(["GET", "PUT", "POST", "DELETE"])
 def task_detail(request, id):
     task = get_object_or_404(Task, id=id)
@@ -347,7 +383,7 @@ def task_detail(request, id):
 
 class TicketList(generics.ListCreateAPIView):
     queryset = Ticket.objects.all()
-    serializer_class = BasicTicketSerializer
+    serializer_class = TicketSerializer
 
 
 class TicketUpdate(generics.RetrieveUpdateAPIView):
@@ -363,7 +399,7 @@ def ticket_detail(request, id):
         serializer = TicketSerializer(ticket)
         return Response(serializer.data)
 
-    elif request.method == "PUT":
+    elif request.method == "POST":
         data = request.data.copy()
         data["description"] = ticket.description
         data["content"] = ticket.content

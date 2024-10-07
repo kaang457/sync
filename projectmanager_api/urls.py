@@ -31,4 +31,5 @@ urlpatterns = [
     path("tickets/<str:id>", ticket_detail, name="ticket_detail"),
     path("comments", CommentView.as_view(), name="comments"),
     path("updates", UpdateView.as_view(), name="updates"),
+    path("upload/", uploadImage, name="image-upload"),
 ]
